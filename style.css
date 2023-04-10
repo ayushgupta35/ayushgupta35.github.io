@@ -130,6 +130,8 @@ a {
 
 .download-cv-btn:hover{
     background: rgb(72, 12, 101);
+    transform: scale(1.1);
+    transition: 0.25s;
 }
 
 .download-cv-btn a:hover{
@@ -241,6 +243,8 @@ a {
 
 .project-card:hover .project-img {
     filter: blur(50px);
+    transform: scale(1.05);
+    transition: 0.5s;
 }
 
 .project-card:hover .project-content {
@@ -275,6 +279,10 @@ a {
     position: relative;
     padding: 10px;
 }
+.skill-card:hover{
+    transform: scale(1.1);
+    transition: 0.25s;
+}
 
 .skill-img{
     display: block;
@@ -296,10 +304,10 @@ a {
     font-size: 100px;
     text-transform: capitalize;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 40px;
     color: #fff;
     background-clip: text;
-    padding-top: 60px;
+    margin-top: 60px;
 }
 
 footer{
@@ -327,7 +335,9 @@ footer{
 }
 
 .links:hover{
-    background: linear-gradient(100deg, rgb(72, 12, 101, 0.7) 0%, rgb(72, 12, 101, 0.9) 100%);;
+    background: linear-gradient(100deg, rgb(72, 12, 101, 0.7) 0%, rgb(72, 12, 101, 0.9) 100%);
+    transform: scale(1.1);
+    transition: 0.25s;
 }
 
 .links img{
