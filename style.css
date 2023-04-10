@@ -68,18 +68,38 @@ a {
     height: 100vh;
     padding: 0 150px;
     display: flex;
-    align-items: center;
     position: fixed;
     top: 0;
     opacity: 0;
     transition: 1s;
+    text-align: left;
 }
 
-.hero-heading {
+.home-info h3{
+    font-size: 40px;
+    color: #fff;
+    justify-content: left;
+    margin-top: 20px;
+}
+
+.home-info p{
+    font-size: 25px;
+    color: #fff;
+    justify-content: left;
+    margin-top: 40px;
+    margin-bottom: 60px;
+}
+
+.home-info h1 {
     color: #fff;
     font-size: 100px;
     text-transform: uppercase;
     font-weight: 500;
+}
+
+.home-info {
+    margin-top: 25vh;
+    width: 70%;
 }
 
 .home-img {
