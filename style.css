@@ -1,0 +1,317 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    max-width: 1400px;
+    display: block;
+    margin: auto;
+    min-height: 100vh;
+    background: #191919;
+    font-family: 'Aldrich', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #191919;
+}
+
+.navbar {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9;
+    background: rgb(72, 12, 101);
+}
+
+.link-group {
+    list-style: none;
+    display: flex;
+}
+
+.link a {
+    color: #fff;
+    opacity: 0.65;
+    text-decoration: none;
+    text-transform: capitalize;
+    padding: 10px 30px;
+    margin: 0 20px;
+    line-height: 80px;
+    transition: 0.5s;
+    font-size: 20px;
+}
+
+.link a:hover {
+    opacity: 1;
+}
+
+.home-section.active,
+.project-section.active,
+.skills-section.active,
+.contact-section.active {
+    position: relative;
+    opacity: 1;
+    z-index: 8;
+}
+
+/* home section */
+
+.home-section {
+    width: 100%;
+    height: 100vh;
+    padding: 0 150px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    opacity: 0;
+    transition: 1s;
+}
+
+.hero-heading {
+    color: #fff;
+    font-size: 100px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.home-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 55%;
+    object-fit: cover;
+    opacity: 0.35;
+    filter: brightness(1.2);
+}
+
+.download-cv-btn{
+    bottom: 20px;
+    left: 50%;
+    padding: 10px 20px;
+    color: #191919;
+    border: none;
+    font-size: 30px;
+    font-weight: 500px;
+    text-transform: capitalize;
+    cursor: pointer;
+    transition: .5s;
+    background: #fff;
+    border-radius: 3rem;
+}
+
+.download-cv-btn:hover{
+    background: rgb(72, 12, 101);
+}
+
+.download-cv-btn a:hover{
+    color: #fff;
+}
+
+/* project-section */
+
+.project-section {
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px 100px 100px;
+    position: fixed;
+    top: 0;
+    transition: 1s;
+    opacity: 0;
+    background: #fff;
+    border-radius: 4rem;
+}
+
+.project-heading {
+    font-size: 100px;
+    text-transform: capitalize;
+    text-align: center;
+    margin-bottom: 50px;
+    color: #191919;
+    background-clip: text;
+}
+
+.project-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 100px;
+}
+
+.project-card {
+    height: 400px;
+    position: relative;
+    display: block;
+    background: linear-gradient(100deg, rgb(72, 12, 101, 0.7) 0%, rgb(72, 12, 101, 0.9) 100%);
+    border-radius: 1rem;
+    box-shadow: 0px 5px 20px 5px #888888;
+}
+
+.project-img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    transition: .5s;
+    border-radius: 1rem;
+    transform: scale(0.85);
+}
+
+.project-content {
+    position: relative;
+    padding: 40px;
+    color: #191919;
+    transition: .5s;
+    opacity: 0;
+}
+
+.project-title {
+    font-size: 50px;
+    text-transform: capitalize;
+    text-align: center;
+    font-weight: 800;
+    text-shadow: 1px 1px 50px #fff, 1px 1px 50px #fff;
+}
+
+.project-info {
+    margin: 30px;
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 30px;
+    text-align: center;
+    text-shadow: 1px 1px 50px #fff, 1px 1px 50px #fff;
+}
+
+.project-btn-grp {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 15px;
+}
+
+.project-btn {
+    height: 40px;
+    width: 100%;
+    text-transform: capitalize;
+    font-size: 20px;
+    font-weight: 800;
+    border-radius: 3rem;
+    background: #191919;
+    color: #fff;
+    cursor: pointer;
+}
+
+.project-btn a {
+    color: #fff;
+}
+
+.project-btn.live {
+    background: #191919;
+    color: #fff;
+    border: none;
+}
+
+.project-card:hover .project-img {
+    filter: blur(50px);
+}
+
+.project-card:hover .project-content {
+    opacity: 1;
+}
+
+/* skills-section */
+
+.skill-section{
+    position: relative;
+    margin: 100px 0;
+}
+
+.heading{
+    text-align: center;
+    font-size: 60px;
+    color: #fff;
+    font-weight: 300;
+    margin-bottom: 100px;
+}
+
+.skills-container{
+    width: 95%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    color: #fff;
+}
+
+.skill-card{
+    position: relative;
+    padding: 10px;
+}
+
+.skill-img{
+    display: block;
+    margin: auto;
+    height: 200px;
+    filter: brightness(0.5) invert(1);
+}
+
+.skill-name{
+    font-size: 30px;
+    font-weight: 300;
+    text-align: center;
+    text-transform: capitalize;
+    margin: 30px 0 20px;
+    text-transform: uppercase;
+}
+
+.skills-heading {
+    font-size: 100px;
+    text-transform: capitalize;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #fff;
+    background-clip: text;
+    padding-top: 60px;
+}
+
+footer{
+    margin-top: 40px;
+    padding-top: 20px;
+    background-color: #fff;
+    text-align: center;
+    color: #191919;
+    font-size: 20px;
+    border-top-right-radius: 4rem;
+    border-top-left-radius: 4rem;
+
+}
+
+.links {
+    width: 5rem;
+    height: auto;
+    background: rgb(72, 12, 101);
+    border-radius: 100%;
+    color: #fafafa;
+    display: inline-block;
+    margin: 1rem;
+    padding: 1rem;
+    transition: background-color 450ms;
+}
+
+.links:hover{
+    background: linear-gradient(100deg, rgb(72, 12, 101, 0.7) 0%, rgb(72, 12, 101, 0.9) 100%);;
+}
+
+.links img{
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
