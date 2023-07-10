@@ -154,7 +154,7 @@ a {
 }
 
 .project-heading {
-    font-size: 100px;
+    font-size: 90px;
     text-transform: capitalize;
     text-align: center;
     margin-bottom: 50px;
@@ -165,11 +165,11 @@ a {
 .project-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 100px;
+    grid-gap: 90px;
 }
 
 .project-card {
-    height: 400px;
+    min-height: 400px;
     position: relative;
     display: block;
     background: linear-gradient(100deg, rgb(72, 12, 101, 0.7) 0%, rgb(72, 12, 101, 0.9) 100%);
@@ -198,21 +198,31 @@ a {
 }
 
 .project-title {
-    font-size: 50px;
+    font-size: 30px;
     text-transform: capitalize;
     text-align: center;
-    font-weight: 800;
+    font-weight: 700;
     text-shadow: 1px 1px 50px #fff, 1px 1px 50px #fff;
 }
 
 .project-info {
-    margin: 30px;
-    font-size: 30px;
-    font-weight: 800;
+    margin: 10px;
+    font-size: 20px;
+    font-weight: 600;
     line-height: 30px;
     text-align: center;
     text-shadow: 1px 1px 50px #fff, 1px 1px 50px #fff;
 }
+
+.project-description {
+    margin: 10px;
+    font-size: 15px;
+    font-weight: 900;
+    line-height: 25px;
+    text-align: center;
+    text-shadow: 1px 1px 50px #fff, 1px 1px 50px #fff;
+}
+
 
 .project-btn-grp {
     display: grid;
@@ -221,11 +231,11 @@ a {
 }
 
 .project-btn {
-    height: 40px;
+    height: 30px;
     width: 100%;
     text-transform: capitalize;
-    font-size: 20px;
-    font-weight: 800;
+    font-size: 15px;
+    font-weight: 700;
     border-radius: 3rem;
     background: #191919;
     color: #fff;
@@ -243,9 +253,9 @@ a {
 }
 
 .project-card:hover .project-img {
-    filter: blur(50px);
+    filter: blur(200px);
     transform: scale(1.05);
-    transition: 0.5s;
+    transition: 1s;
 }
 
 .project-card:hover .project-content {
