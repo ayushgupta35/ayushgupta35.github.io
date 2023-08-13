@@ -195,6 +195,7 @@ a {
     color: #191919;
     transition: .5s;
     opacity: 0;
+    text-align: center;
 }
 
 .project-title {
@@ -223,16 +224,9 @@ a {
     text-shadow: 1px 1px 50px #fff, 1px 1px 50px #fff;
 }
 
-
-.project-btn-grp {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-gap: 15px;
-}
-
 .project-btn {
-    height: 30px;
-    width: 100%;
+    height: 40px;
+    width: 130px;
     text-transform: capitalize;
     font-size: 15px;
     font-weight: 700;
@@ -240,6 +234,9 @@ a {
     background: #191919;
     color: #fff;
     cursor: pointer;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
 }
 
 .project-btn a {
@@ -254,7 +251,6 @@ a {
 
 .project-card:hover .project-img {
     filter: blur(200px);
-    transform: scale(1.05);
     transition: 1s;
 }
 
@@ -355,4 +351,170 @@ footer{
     width: 100%;
     max-width: 100%;
     height: auto;
+}
+
+/* Add media query for smaller screens (mobile and tablet) */
+@media only screen and (max-width: 768px) {
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: -70%;
+        width: 50%;
+        height: 100vh;
+        background: rgb(72, 12, 101);
+        transition: left 0.5s;
+        z-index: 10;
+    }
+
+    .navbar.active {
+        left: 0;
+    }
+
+    .link-group {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .link {
+        margin: 5px;
+    }
+
+    .mobile-navbar {
+        position: fixed;
+        cursor: pointer;
+        background:rgb(72, 12, 101);
+        width: 100%;
+        z-index: 11;
+    }
+
+    .menu-icon {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        cursor: pointer;
+    }
+
+    .menu-icon-lines {
+        width: 27px;
+        height: 4px;
+        background-color: #fff;
+        margin: 4px 0;
+        box-shadow: 0px 5px 20px 3px #888888;
+    }
+
+    .home-section {
+        padding: 0px;
+        text-align: center;
+    }
+
+    .home-info {
+        margin-top: 50vh;
+        width: 100%;
+    }
+
+    .home-img {
+        height: 130vh;
+        top: -20vh;
+        width: 100%;
+    }
+
+    .home-info h3{
+        font-size: 25px;
+        justify-content: center;
+        margin: 15px;
+    }
+    
+    .home-info p{
+        display: none;
+    }
+    
+    .home-info h1 {
+        font-size: 60px;
+        font-weight: 600;
+        margin: 20px;
+    }
+
+    .download-cv-btn{
+        font-size: 30px;
+        font-weight: 700px;
+        margin-top: 25px;
+    }
+
+    .project-section {
+        padding: 30px;
+        padding-bottom: 50px;
+    }
+
+    .project-container {
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 30px;
+    }
+
+    .project-card {
+        min-height: auto;
+        margin: 10px;
+        padding: 10px;
+        background: linear-gradient(50deg, rgba(212, 168, 235, 0.7) 0%, rgba(71, 12, 101, 0.6) 100%);
+    }
+
+    .project-img {
+        max-height: 300px;
+        opacity: 1;
+        transform: scale(0.8);
+    }
+
+    .project-content {
+        margin-top: 300px;
+        padding: 10px;
+        opacity: 1;
+    }
+
+    .project-card:hover .project-img {
+        filter: none;
+    }
+    .project-card:hover {
+        transform: scale(1.05);
+        transition: 0.50s;
+    }
+    
+    .project-description, .project-info, .project-heading, .project-title  {
+        text-shadow: none;
+    }
+
+    .skills-heading, .project-heading{
+        font-size: 50px;
+        margin-bottom: 30px;
+    }
+
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 5px;
+    }
+
+    .skill-card {
+        padding: 5px;
+    }
+
+
+    .skill-img {
+        height: 100px;
+    }
+
+    .skill-name {
+        font-size: 18px;
+        margin-top: 10px;
+    }
+
+    footer {
+        padding: 20px;
+    }
+
+    .links img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .links {
+        width: 4rem;
+    }
 }
