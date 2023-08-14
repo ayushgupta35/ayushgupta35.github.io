@@ -12,7 +12,7 @@ body {
     margin: auto;
     min-height: 100vh;
     background: #191919;
-    font-family: 'Aldrich', sans-serif;
+    font-family: 'Monaco';
 }
 
 a {
@@ -56,7 +56,8 @@ a {
 .home-section.active,
 .project-section.active,
 .skills-section.active,
-.contact-section.active {
+.contact-section.active
+.courses-section.active {
     position: relative;
     opacity: 1;
     z-index: 8;
@@ -77,14 +78,14 @@ a {
 }
 
 .home-info h3{
-    font-size: 40px;
+    font-size: 35px;
     color: #fff;
     justify-content: left;
     margin-top: 20px;
 }
 
 .home-info p{
-    font-size: 25px;
+    font-size: 20px;
     color: #fff;
     justify-content: left;
     margin-top: 40px;
@@ -93,7 +94,7 @@ a {
 
 .home-info h1 {
     color: #fff;
-    font-size: 100px;
+    font-size: 80px;
     text-transform: uppercase;
     font-weight: 500;
 }
@@ -120,7 +121,7 @@ a {
     padding: 10px 20px;
     color: #191919;
     border: none;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 500px;
     text-transform: capitalize;
     cursor: pointer;
@@ -129,13 +130,17 @@ a {
     border-radius: 3rem;
 }
 
+button, a {
+    font-family: 'Monaco';
+}
+
 .download-cv-btn:hover{
     background: rgb(72, 12, 101);
     transform: scale(1.1);
     transition: 0.25s;
 }
 
-.download-cv-btn a:hover{
+.download-cv-btn:hover a{
     color: #fff;
 }
 
@@ -144,7 +149,7 @@ a {
 .project-section {
     width: 100%;
     min-height: 100vh;
-    padding: 100px 100px 100px;
+    padding: 30px 100px 100px;
     position: fixed;
     top: 0;
     transition: 1s;
@@ -154,7 +159,7 @@ a {
 }
 
 .project-heading {
-    font-size: 90px;
+    font-size: 70px;
     text-transform: capitalize;
     text-align: center;
     margin-bottom: 50px;
@@ -203,7 +208,6 @@ a {
     text-transform: capitalize;
     text-align: center;
     font-weight: 700;
-    text-shadow: 1px 1px 50px #fff, 1px 1px 50px #fff;
 }
 
 .project-info {
@@ -212,7 +216,6 @@ a {
     font-weight: 600;
     line-height: 30px;
     text-align: center;
-    text-shadow: 1px 1px 50px #fff, 1px 1px 50px #fff;
 }
 
 .project-description {
@@ -221,7 +224,6 @@ a {
     font-weight: 900;
     line-height: 25px;
     text-align: center;
-    text-shadow: 1px 1px 50px #fff, 1px 1px 50px #fff;
 }
 
 .project-btn {
@@ -249,13 +251,20 @@ a {
     border: none;
 }
 
-.project-card:hover .project-img {
-    filter: blur(200px);
-    transition: 1s;
+.project-card:hover {
+
+    transition: 0.5s;
+    background: linear-gradient(50deg, rgba(212, 168, 235, 0.7) 0%, rgba(71, 12, 101, 0.6) 100%); 
 }
 
 .project-card:hover .project-content {
+    transition: 0.5s;
     opacity: 1;
+}
+
+.project-card:hover .project-img {
+    transition: 0.5s;
+    opacity: 0;
 }
 
 /* skills-section */
@@ -299,7 +308,7 @@ a {
 }
 
 .skill-name{
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 300;
     text-align: center;
     text-transform: capitalize;
@@ -308,7 +317,7 @@ a {
 }
 
 .skills-heading {
-    font-size: 100px;
+    font-size: 70px;
     text-transform: capitalize;
     text-align: center;
     margin-bottom: 40px;
@@ -317,16 +326,77 @@ a {
     margin-top: 60px;
 }
 
-footer{
-    margin-top: 40px;
-    padding-top: 20px;
+/* conatiner */
+
+.container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-gap: 0px;
     background-color: #fff;
-    text-align: center;
+    border-radius: 4rem;
+    margin-top: 30px;
+}
+
+/* courses-section */
+
+.courses-section {
+    text-align: left;
+    border-top-left-radius: 4rem;
+    border-bottom-left-radius: 4rem;
+    background: linear-gradient(150deg, rgb(235, 217, 245) 0%, rgb(182, 136, 201) 100%); 
+}
+
+.courses-section h1, .certifications-awards-section h1 {
+    font-size: 40px;
+    text-transform: capitalize;
+    color: #191919;
+    background-clip: text;
+    padding: 20px;
+    margin-left: 20px;
+}
+
+.courses-section h3, .certifications-awards-section h3 {
+    font-size: 25px;
+    font-weight: 700;
+    padding-top: 10px;
+    color: rgb(72, 12, 101);
+    margin-left: 40px;
+}
+
+.courses-section ul, .certifications-awards-section ul {
+    margin: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 30px;
+    padding-bottom: 15px;
+    list-style: circle;
+    margin-left: 40px;
+}
+
+/* certifications-awards-section */
+
+.certifications-awards-section {
+    text-align: left;
+    background: linear-gradient(150deg, rgb(209, 157, 236) 0%, rgb(132, 111, 141) 100%); 
+    border-top-right-radius: 4rem;
+    border-bottom-right-radius: 4rem;
+}
+
+/* contact-section */
+
+footer {
+    padding: 20px;
+    background-color: #fff;
     color: #191919;
     font-size: 20px;
-    border-top-right-radius: 4rem;
-    border-top-left-radius: 4rem;
+    margin-top: -55px;
+    text-align: center;
+}
 
+.contact h3 {
+    margin-top: 55px;
+    font-size: 30px;
 }
 
 .links {
@@ -341,7 +411,7 @@ footer{
     transition: background-color 450ms;
 }
 
-.links:hover{
+.links:hover, input[type="submit"]:hover {
     background: linear-gradient(100deg, rgb(72, 12, 101, 0.7) 0%, rgb(72, 12, 101, 0.9) 100%);
     transform: scale(1.1);
     transition: 0.25s;
@@ -353,13 +423,47 @@ footer{
     height: auto;
 }
 
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 40%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    text-align: center;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input[type="submit"] {
+    background-color: rgb(72, 12, 101);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4rem;
+    font-size: 15px;
+    cursor: pointer;
+    font-family: 'Monaco';
+}
+
 /* Add media query for smaller screens (mobile and tablet) */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 970px) {
     .navbar {
         position: fixed;
         top: 0;
-        left: -70%;
-        width: 50%;
+        left: -100%;
+        min-width: 50%;
+        max-width: 60%;
         height: 100vh;
         background: rgb(72, 12, 101);
         transition: left 0.5s;
@@ -504,6 +608,38 @@ footer{
     .skill-name {
         font-size: 18px;
         margin-top: 10px;
+    }
+
+    .container {
+        grid-template-columns: 100%;
+    }
+
+    .courses-section {
+        border-top-right-radius: 4rem;
+        border-bottom-left-radius: 0;
+        background: linear-gradient(50deg, rgb(235, 217, 245) 0%, rgb(182, 136, 201) 100%); 
+    }
+
+    .certifications-awards-section {
+        border-bottom-left-radius: 4rem;
+        border-top-right-radius: 0;
+        background: linear-gradient(140deg, rgb(235, 217, 245) 0%, rgb(182, 136, 201) 100%);     
+    }
+
+    .courses-section h1, .certifications-awards-section h1 {
+        font-size: 25px;
+        margin-left: 1px;
+    }
+    
+    .courses-section h3, .certifications-awards-section h3 {
+        font-size: 18px;
+        margin-left: 25px;
+    }
+    
+    .courses-section ul, .certifications-awards-section ul {
+        font-size: 13px;
+        line-height: 25px;
+        margin-left: 25px;
     }
 
     footer {

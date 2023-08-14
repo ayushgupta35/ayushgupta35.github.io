@@ -24,6 +24,8 @@
                 <li class="link active"><a href="#">home</a></li>
                 <li class="link"><a href="#project-section">projects</a></li>
                 <li class="link"><a href="#skills-section">skills</a></li>
+                <li class="link"><a href="#container">courses</a></li>
+                <li class="link"><a href="#container">certifications/awards</a></li>
                 <li class="link"><a href="#contact-section">contact</a></li>
             </ul>
         </nav>
@@ -234,18 +236,76 @@
             </div>
         </section>
 
+        <section id="container" class="container">
+            <!-- courses section -->
+            <section id="courses-section" class="courses-section active">
+                <h1>Relevant Courses</h1>
+                <h3>UW Courses Taken</h3>
+                <ul>
+                    <li>CSE 331 Software Design & Implementation</li>
+                    <li>CSE 351 Hardware/Software Interface</li>
+                    <li>CSE 311, CSE 312 Discrete Math I, II</li>
+                    <li>CSE 143 Computer Programming I, II, III</li>
+                    <li>CSE 332 Data Structures & Parallelism</li>
+                    <li>MATH 208 Matrix Algebra</li>
+                </ul>
+                <h3>UW Courses Planned For This Year</h3>
+                <ul>
+                    <li>CSE 446 Machine Learning</li>
+                    <li>CSE 442 Data Visualization</li>
+                    <li>CSE 421 Algorithms</li>
+                </ul>
+                <h3>Other Courses</h3>
+                <ul>
+                    <li>Haravrd's CS50 Intro to Computer Science</li>
+                    <li>Haravrd's CS50 Web Development</li>
+                    <li>Georgia Tech Intro to C++</li>
+                </ul>
+            </section>
+
+            <!-- certications and awards section -->
+            <section id="certifications-awards-section" class="certifications-awards-section active">
+                <h1>Certifications & Awards</h1>
+                <h3>Certifications</h3>
+                <ul>
+                    <li>Dubstech - Data Visualization in Tableau and Microsoft Power Bi</li>
+                </ul>
+                <h3>Awards</h3>
+                <ul>
+                    <li>Robert Half International - Student Scholar</li>
+                    <li>National Merit Scholorship Corporation - Scholarship Recipient</li>
+                    <li>University of Washington - Purple & Gold Scholarship</li>
+                </ul>
+            </section>
+        </section>
+
         <!-- contact section -->
         <footer id="contact-section">
             <div class="contact">
                 <h3>Contact:</h3>
                 <h5><a href="mailto:ayushg3512@gmail.com">ayushg3512@gmail.com</a></h5>
+                <div class="links">
+                    <a href="https://www.linkedin.com/in/ayushgupta1"><img src="img/linkedin.png" alt="linkedin"></a>
+                </div>
+                <div class="links">
+                    <a href="mailto:ayushg3512@gmail.com"><img src="img/mail.png" alt="mail"></a>
+                </div>
             </div>
-            <div class="links">
-                <a href="https://www.linkedin.com/in/ayushgupta1"><img src="img/linkedin.png" alt="linkedin"></a>
-            </div>
-            <div class="links">
-                <a href="mailto:ayushg3512@gmail.com"><img src="img/mail.png" alt="mail"></a>
-            </div>
+
+            <form action="https://formspree.io/f/xjvqyane" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                
+                <div class="submit-button">
+                    <input type="submit" value="Submit">
+                </div>
+            </form>
         </footer>
 
         <script src="app.js"></script>
