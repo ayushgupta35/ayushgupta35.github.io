@@ -136,7 +136,7 @@ button, a {
 
 .download-cv-btn:hover{
     background: rgb(72, 12, 101);
-    transform: scale(1.1);
+    transform: scale(1.05);
     transition: 0.25s;
 }
 
@@ -245,10 +245,16 @@ button, a {
     color: #fff;
 }
 
-.project-btn.live {
+.project-btn {
     background: #191919;
     color: #fff;
     border: none;
+}
+
+.project-btn:hover {
+    background: rgb(72, 12, 101);
+    transform: scale(1.05);
+    transition: 0.25s;
 }
 
 .project-card:hover {
@@ -296,7 +302,7 @@ button, a {
     padding: 10px;
 }
 .skill-card:hover{
-    transform: scale(1.1);
+    transform: scale(1.05);
     transition: 0.25s;
 }
 
@@ -413,7 +419,7 @@ footer {
 
 .links:hover, input[type="submit"]:hover {
     background: linear-gradient(100deg, rgb(72, 12, 101, 0.7) 0%, rgb(72, 12, 101, 0.9) 100%);
-    transform: scale(1.1);
+    transform: scale(1.05);
     transition: 0.25s;
 }
 
@@ -576,6 +582,7 @@ input[type="submit"] {
 
     .project-card:hover .project-img {
         filter: none;
+        opacity: 1;
     }
     .project-card:hover {
         transform: scale(1.05);
@@ -623,23 +630,24 @@ input[type="submit"] {
     .certifications-awards-section {
         border-bottom-left-radius: 4rem;
         border-top-right-radius: 0;
-        background: linear-gradient(140deg, rgb(235, 217, 245) 0%, rgb(182, 136, 201) 100%);     
+        background: linear-gradient(140deg, rgb(235, 217, 245) 0%, rgb(182, 136, 201) 100%);
+        padding-bottom: 30px;     
     }
 
     .courses-section h1, .certifications-awards-section h1 {
         font-size: 25px;
-        margin-left: 1px;
+        margin-left: 20px;
     }
     
     .courses-section h3, .certifications-awards-section h3 {
         font-size: 18px;
-        margin-left: 25px;
+        margin-left: 45px;
     }
     
     .courses-section ul, .certifications-awards-section ul {
         font-size: 13px;
         line-height: 25px;
-        margin-left: 25px;
+        margin-left: 45px;
     }
 
     footer {
