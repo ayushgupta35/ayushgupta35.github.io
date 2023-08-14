@@ -303,7 +303,7 @@ button, a {
 .skill-img{
     display: block;
     margin: auto;
-    height: 200px;
+    height: 120px;
     filter: brightness(0.5) grayscale(1) invert(1);
 }
 
