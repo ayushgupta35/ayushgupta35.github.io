@@ -535,7 +535,7 @@ input[type="submit"] {
     .project-section {
         padding: 0px;
         padding-top: 40px;
-        padding-bottom: 30px;
+        padding-bottom: 50px;
     }
 
     .project-container {
@@ -546,8 +546,8 @@ input[type="submit"] {
     .project-card {
         min-height: auto;
         margin: 10px;
-        margin-right: 20px;
-        margin-left: 20px;
+        margin-right: 15px;
+        margin-left: 15px;
         padding: 10px;
     }
     
@@ -599,13 +599,13 @@ input[type="submit"] {
     
     .courses-section h3, .certifications-awards-section h3 {
         font-size: 18px;
-        margin-left: 45px;
+        margin-left: 25px;
     }
     
     .courses-section ul, .certifications-awards-section ul {
         font-size: 13px;
         line-height: 25px;
-        margin-left: 45px;
+        margin-left: 35px;
     }
 
     footer {
