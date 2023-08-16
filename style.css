@@ -534,6 +534,8 @@ input[type="submit"] {
 
     .project-section {
         padding: 0px;
+        padding-top: 40px;
+        padding-bottom: 30px;
     }
 
     .project-container {
