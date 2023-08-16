@@ -30,6 +30,7 @@ a {
     align-items: center;
     z-index: 9;
     background: rgb(72, 12, 101);
+    max-height: 50px;
 }
 
 .link-group {
@@ -39,14 +40,14 @@ a {
 
 .link a {
     color: #fff;
-    opacity: 0.65;
+    opacity: 0.85;
     text-decoration: none;
     text-transform: capitalize;
-    padding: 10px 30px;
+    padding: 10px 20px;
     margin: 0 20px;
     line-height: 80px;
     transition: 0.5s;
-    font-size: 20px;
+    font-size: 17px;
 }
 
 .link a:hover {
@@ -149,9 +150,9 @@ button, a {
 .project-section {
     width: 100%;
     min-height: 100vh;
-    padding: 30px 100px 100px;
     position: fixed;
     top: 0;
+    padding: 60px;
     transition: 1s;
     opacity: 0;
     background: #fff;
@@ -170,37 +171,28 @@ button, a {
 .project-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 90px;
+    grid-gap: 80px;
 }
 
 .project-card {
     min-height: 400px;
     position: relative;
     display: block;
-    background: linear-gradient(100deg, rgb(72, 12, 101, 0.7) 0%, rgb(72, 12, 101, 0.9) 100%);
+    background: linear-gradient(50deg, rgba(212, 168, 235, 0.7) 0%, rgba(71, 12, 101, 0.6) 100%); 
     border-radius: 1rem;
     box-shadow: 0px 5px 20px 5px #888888;
+    text-align: center;
 }
 
 .project-img {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    object-fit: cover;
-    transition: .5s;
-    border-radius: 1rem;
-    transform: scale(0.85);
+    width: 80%;
+    text-align: center;
+    height: auto;
+    padding-top: 30px;
 }
 
 .project-content {
-    position: relative;
-    padding: 40px;
-    color: #191919;
-    transition: .5s;
-    opacity: 0;
-    text-align: center;
+    padding: 30px;
 }
 
 .project-title {
@@ -258,19 +250,8 @@ button, a {
 }
 
 .project-card:hover {
-
-    transition: 0.5s;
-    background: linear-gradient(50deg, rgba(212, 168, 235, 0.7) 0%, rgba(71, 12, 101, 0.6) 100%); 
-}
-
-.project-card:hover .project-content {
-    transition: 0.5s;
-    opacity: 1;
-}
-
-.project-card:hover .project-img {
-    transition: 0.5s;
-    opacity: 0;
+    transform: scale(1.05);
+    transition: 0.50s;
 }
 
 /* skills-section */
@@ -463,7 +444,7 @@ input[type="submit"] {
 }
 
 /* Add media query for smaller screens (mobile and tablet) */
-@media only screen and (max-width: 970px) {
+@media only screen and (max-width: 1000px) {
     .navbar {
         position: fixed;
         top: 0;
@@ -550,12 +531,6 @@ input[type="submit"] {
         margin-top: 25px;
     }
 
-    .project-section {
-        margin-top: 40px;
-        padding: 30px;
-        padding-bottom: 50px;
-    }
-
     .project-container {
         grid-template-columns: repeat(1, 1fr);
         grid-gap: 30px;
@@ -565,34 +540,8 @@ input[type="submit"] {
         min-height: auto;
         margin: 10px;
         padding: 10px;
-        background: linear-gradient(50deg, rgba(212, 168, 235, 0.7) 0%, rgba(71, 12, 101, 0.6) 100%);
-    }
-
-    .project-img {
-        max-height: 300px;
-        opacity: 1;
-        transform: scale(0.8);
-    }
-
-    .project-content {
-        margin-top: 300px;
-        padding: 10px;
-        opacity: 1;
-    }
-
-    .project-card:hover .project-img {
-        filter: none;
-        opacity: 1;
-    }
-    .project-card:hover {
-        transform: scale(1.05);
-        transition: 0.50s;
     }
     
-    .project-description, .project-info, .project-heading, .project-title  {
-        text-shadow: none;
-    }
-
     .skills-heading, .project-heading{
         font-size: 50px;
         margin-bottom: 30px;
