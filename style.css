@@ -455,6 +455,7 @@ input[type="submit"] {
         background: rgb(72, 12, 101);
         transition: left 0.5s;
         z-index: 10;
+        max-height: none;
     }
 
     .navbar.active {
