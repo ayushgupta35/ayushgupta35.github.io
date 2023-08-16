@@ -532,6 +532,10 @@ input[type="submit"] {
         margin-top: 25px;
     }
 
+    .project-section {
+        padding: 0px;
+    }
+
     .project-container {
         grid-template-columns: repeat(1, 1fr);
         grid-gap: 30px;
@@ -540,6 +544,8 @@ input[type="submit"] {
     .project-card {
         min-height: auto;
         margin: 10px;
+        margin-right: 20px;
+        margin-left: 20px;
         padding: 10px;
     }
     
