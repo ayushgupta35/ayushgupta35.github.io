@@ -125,7 +125,6 @@ a {
     font-size: 25px;
     font-weight: 500px;
     text-transform: capitalize;
-    cursor: pointer;
     transition: .5s;
     background: #fff;
     border-radius: 3rem;
@@ -444,7 +443,7 @@ input[type="submit"] {
 }
 
 /* Add media query for smaller screens (mobile and tablet) */
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1150px) {
     .navbar {
         position: fixed;
         top: 0;
@@ -527,9 +526,7 @@ input[type="submit"] {
     }
 
     .download-cv-btn{
-        font-size: 30px;
-        font-weight: 700px;
-        margin-top: 25px;
+        display: none;
     }
 
     .project-section {
