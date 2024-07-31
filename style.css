@@ -144,13 +144,30 @@ button, a {
     color: #fff;
 }
 
+.about-section {
+    display: none;
+    width: 100%;
+    top: 0;
+    padding: 60px;
+    border-radius: 4rem;
+}
+
+.about-section p {
+    margin: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: center;
+    font-weight: bolder;
+}
+
 /* project-section */
 
 .project-section {
     width: 100%;
     min-height: 100vh;
     position: fixed;
-    top: 0;
+    top: 0px;
     padding: 60px;
     transition: 1s;
     opacity: 0;
@@ -258,6 +275,7 @@ button, a {
 .skill-section{
     position: relative;
     margin: 100px 0;
+    background-color: #191919;
 }
 
 .heading{
@@ -444,6 +462,9 @@ input[type="submit"] {
 
 /* Add media query for smaller screens (mobile and tablet) */
 @media only screen and (max-width: 1150px) {
+    body {
+        text-align: center;
+    }
     .navbar {
         position: fixed;
         top: 0;
@@ -525,14 +546,30 @@ input[type="submit"] {
         margin: 20px;
     }
 
-    .download-cv-btn{
+    .home-section button {
         display: none;
+    }
+
+    .about-section {
+        display: block;
+    }
+
+    .download-cv-btn {
+        bottom: 10px;
+        margin-top: 30px;
+        border: #191919;
+        background: linear-gradient(160deg, rgb(235, 217, 245) 0%, rgb(182, 136, 201) 100%);
     }
 
     .project-section {
         padding: 0px;
-        padding-top: 40px;
+        padding-top: 0px;
         padding-bottom: 50px;
+        margin-top: 40px;
+    }
+
+    .project-heading {
+        padding-top: 30px;
     }
 
     .project-container {
@@ -577,12 +614,14 @@ input[type="submit"] {
     }
 
     .courses-section {
+        text-align: center;
         border-top-right-radius: 4rem;
         border-bottom-left-radius: 0;
         background: linear-gradient(50deg, rgb(235, 217, 245) 0%, rgb(182, 136, 201) 100%); 
     }
 
     .certifications-awards-section {
+        text-align: center;
         border-bottom-left-radius: 4rem;
         border-top-right-radius: 0;
         background: linear-gradient(140deg, rgb(235, 217, 245) 0%, rgb(182, 136, 201) 100%);
@@ -603,6 +642,7 @@ input[type="submit"] {
         font-size: 13px;
         line-height: 25px;
         margin-left: 35px;
+        list-style-type: none;
     }
 
     footer {
