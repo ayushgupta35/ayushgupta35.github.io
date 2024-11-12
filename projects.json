@@ -22,7 +22,7 @@
       "title": "AI Pacman",
       "image": "assets/pacman.png",
       "technologies": "Python",
-      "resourcesLink": "https://github.com/ayushgupta35/Towers-of-Hanoi-Q-Learning-Solver/tree/main",
+      "resourcesLink": "https://github.com/ayushgupta35/AI-Pacman",
       "presentationLink": "",
       "description": "The project explores adversarial search techniques, specifically Minimax, Alpha-Beta Pruning, and Expectimax, applied to a multi-agent environment in the context of the classic Pacman game. It demonstrates how agents can navigate competitive and uncertain environments by employing strategic decision-making techniques, from deterministic adversarial play (Minimax) to probabilistic modeling (Expectimax), showcasing how each approach impacts performance in complex game scenarios."
   },
