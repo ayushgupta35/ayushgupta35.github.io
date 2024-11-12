@@ -49,22 +49,22 @@
             const linksContainer = document.getElementById('project-links');
             linksContainer.innerHTML = ''; // Clear any previous links
 
-            if (project.githubLink) {
-                const githubLink = document.createElement('a');
-                githubLink.href = project.githubLink;
-                githubLink.target = "_blank";
-                githubLink.className = "project-link";
-                githubLink.textContent = "GitHub Repo";
-                linksContainer.appendChild(githubLink);
+            if (project.resourcesLink) {
+                const resourcesLink = document.createElement('a');
+                resourcesLink.href = project.resourcesLink;
+                resourcesLink.target = "_blank";
+                resourcesLink.className = "project-link";
+                resourcesLink.textContent = "Project Resources";
+                linksContainer.appendChild(resourcesLink);
             }
 
-            if (project.demoLink) {
-                const demoLink = document.createElement('a');
-                demoLink.href = project.demoLink;
-                demoLink.target = "_blank";
-                demoLink.className = "project-link";
-                demoLink.textContent = "Project Link";
-                linksContainer.appendChild(demoLink);
+            if (project.presentationLink) {
+                const presentationLink = document.createElement('a');
+                presentationLink.href = project.presentationLink;
+                presentationLink.target = "_blank";
+                presentationLink.className = "project-link";
+                presentationLink.textContent = "Presentation";
+                linksContainer.appendChild(presentationLink);
             }
         } catch (error) {
             console.error("Error loading project data:", error);

@@ -4,8 +4,8 @@
       "title": "Grocery Store Business ML Model and Basket Analysis",
       "image": "assets/grocery-ml.png",
       "technologies": "Tableau, R, Python",
-      "githubLink": "https://tinyurl.com/43swtj4c",
-      "demoLink": "https://tinyurl.com/52zh8z33",
+      "resourcesLink": "https://tinyurl.com/43swtj4c",
+      "presentationLink": "https://tinyurl.com/52zh8z33",
       "description": "Created a machine learning linear regression model that uses data from an Australian grocery store to train the model to predict the total sales, total cost, and quantity of items sold for the store as a whole. Model could be used to also make same predictions for each category and subcategory of items sold."
   },
   {
@@ -13,8 +13,8 @@
       "title": "Towers of Hanoi AI Solver",
       "image": "assets/toh.png",
       "technologies": "Python",
-      "githubLink": "https://github.com/ayushgupta35/Towers-of-Hanoi-Q-Learning-Solver/tree/main",
-      "demoLink": "",
+      "resourcesLink": "https://github.com/ayushgupta35/Towers-of-Hanoi-Q-Learning-Solver/tree/main",
+      "presentationLink": "",
       "description": "The project explores reinforcement learning techniques, specifically Value Iteration and Q-Learning, applied to a Markov Decision Process (MDP) in the context of solving the Towers of Hanoi (TOH) puzzle. It demonstrates how an agent can learn optimal policies through both model-based planning (Value Iteration) and model-free learning (Q-Learning) in a simulated environment."
   },
   {
@@ -22,8 +22,8 @@
       "title": "AI Pacman",
       "image": "assets/pacman.png",
       "technologies": "Python",
-      "githubLink": "https://github.com/ayushgupta35/Towers-of-Hanoi-Q-Learning-Solver/tree/main",
-      "demoLink": "",
+      "resourcesLink": "https://github.com/ayushgupta35/Towers-of-Hanoi-Q-Learning-Solver/tree/main",
+      "presentationLink": "",
       "description": "The project explores adversarial search techniques, specifically Minimax, Alpha-Beta Pruning, and Expectimax, applied to a multi-agent environment in the context of the classic Pacman game. It demonstrates how agents can navigate competitive and uncertain environments by employing strategic decision-making techniques, from deterministic adversarial play (Minimax) to probabilistic modeling (Expectimax), showcasing how each approach impacts performance in complex game scenarios."
   },
   {
@@ -31,8 +31,8 @@
       "title": "UW Calendar Exporter",
       "image": "assets/uw-calendar-extension.png",
       "technologies": "JavaScript",
-      "githubLink": "https://github.com/ayushgupta35/UW-Calendar-Exporter",
-      "demoLink": "https://chromewebstore.google.com/detail/uw-calendar-exporter/gkckamjhkkkdogmgbhabjecjjeecpbmb?authuser=0&hl=en",
+      "resourcesLink": "https://github.com/ayushgupta35/UW-Calendar-Exporter",
+      "presentationLink": "https://chromewebstore.google.com/detail/uw-calendar-exporter/gkckamjhkkkdogmgbhabjecjjeecpbmb?authuser=0&hl=en",
       "description": "Automating class scheduling with seamless calendar integration for University of Washington students. This project allows direct export of course details from the UW registration page into Google or Apple Calendar, filling in essential information like course names, locations, and class times. Designed to streamline the registration process, it eliminates the need for manual calendar entry and simplifies schedule management, providing an efficient, user-focused solution for academic planning."
   },
   {
@@ -40,8 +40,8 @@
       "title": "RateMyProf Assistant for UW MyPlan Chrome Extension",
       "image": "assets/rmp-extension.png",
       "technologies": "JavaScript",
-      "githubLink": "https://github.com/ayushgupta35/RateMyProfessors/tree/main",
-      "demoLink": "https://chromewebstore.google.com/detail/ratemyprof-assistant-for/ofkeokbllkoiceaekhaljfjbjegahaej?authuser=0&hl=en",
+      "resourcesLink": "https://github.com/ayushgupta35/RateMyProfessors/tree/main",
+      "presentationLink": "https://chromewebstore.google.com/detail/ratemyprof-assistant-for/ofkeokbllkoiceaekhaljfjbjegahaej?authuser=0&hl=en",
       "description": "Enhancing Course Selection with Professor Ratings for Informed Decisions. This project integrates real-time data from RateMyProfessors into the University of Washington's MyPlan platform. By displaying professor ratings, difficulty, and 'Would Take Again' percentages, it helps students make data-driven decisions when selecting courses. The goal is to streamline the registration process and provide valuable insights directly within the course planning tool."
   },
   {
@@ -49,8 +49,8 @@
       "title": "UW CourseKeeper Chrome Extension",
       "image": "assets/coursekeeper.png",
       "technologies": "JavaScript",
-      "githubLink": "https://github.com/ayushgupta35/RateMyProfessors/tree/main",
-      "demoLink": "https://chromewebstore.google.com/detail/uw-coursekeeper/ipdnhklbnjilkkcdlfneldhmgpbjmimf?authuser=0&hl=en",
+      "resourcesLink": "https://github.com/ayushgupta35/RateMyProfessors/tree/main",
+      "presentationLink": "https://chromewebstore.google.com/detail/uw-coursekeeper/ipdnhklbnjilkkcdlfneldhmgpbjmimf?authuser=0&hl=en",
       "description": "Streamlining UW Course Registration with One-Click SLN Access. Frustrated by my own struggles of quickly finding and typing in SLN codes before classes filled up. Notifications from MyPlan and Notify.UW coming in, but scrambling to locate the right code. Now, automatic synchronization of notifications with SLN codes. Easy dropdown access directly on the registration page. Fewer errors, faster input. A tool designed to help students avoid the same struggles, making registration smooth and efficient."
   },
   {
@@ -58,8 +58,8 @@
       "title": "Time Travel VR App Prototype",
       "image": "assets/chronoVRse.png",
       "technologies": "Figma",
-      "githubLink": "https://docs.google.com/presentation/d/13eyvmaTNaW1xC_xKAgDL2KqUohmNsShN4OJi5SkoLqY/edit?usp=sharing",
-      "demoLink": "https://www.figma.com/file/nzcfhKonQDWTLhKwa6yJNz/Prototype-Patakhas-2.0?type=design&node-id=0-1&mode=design&t=tIDodpWYHdcw9cEZ-0",
+      "resourcesLink": "https://www.figma.com/file/nzcfhKonQDWTLhKwa6yJNz/Prototype-Patakhas-2.0?type=design&node-id=0-1&mode=design&t=tIDodpWYHdcw9cEZ-0",
+      "presentationLink": "https://docs.google.com/presentation/d/13eyvmaTNaW1xC_xKAgDL2KqUohmNsShN4OJi5SkoLqY/edit?usp=sharing",
       "description": "This app leverages virtual reality to enable users to explore historical events and future scenarios in an immersive, educational environment. It allows users to navigate through time with a simple interface, experiencing the richness of history and the possibilities of the future firsthand."
   },
   {
@@ -67,8 +67,8 @@
       "title": "AI Mental Health App Prototype",
       "image": "assets/headsora.png",
       "technologies": "Figma",
-      "githubLink": "https://tinyurl.com/32rrwkrj",
-      "demoLink": "https://tinyurl.com/4pue3h85",
+      "resourcesLink": "https://tinyurl.com/4pue3h85",
+      "presentationLink": "https://tinyurl.com/32rrwkrj",
       "description": "AI-powered virtual therapist assistant created for mental health therapy. Using cutting-edge machine learning and natural language processing methods, Headsora provides an easy way for people to communicate with a virtual counselor, boosting emotional well-being and encouraging self-improvement. Goal is to remove obstacles like cost, stigma, and location that prevent people from getting assistance."
   },
   {
@@ -76,8 +76,8 @@
       "title": "College Football Predictive Analysis",
       "image": "assets/cfb.png",
       "technologies": "R",
-      "githubLink": "https://docs.google.com/presentation/d/1m1ssz-CM0EARm2hLDzsp1sV6Nnwn1biN7QVeZVgP5po/edit?usp=sharing",
-      "demoLink": "https://drive.google.com/drive/folders/1t53l4c6Z8kZBftdP7AbkP2kfkFcO0NGG?usp=sharing",
+      "resourcesLink": "https://drive.google.com/drive/folders/1t53l4c6Z8kZBftdP7AbkP2kfkFcO0NGG?usp=sharing",
+      "presentationLink": "https://docs.google.com/presentation/d/1m1ssz-CM0EARm2hLDzsp1sV6Nnwn1biN7QVeZVgP5po/edit?usp=sharing",
       "description": "Data-Driven Analysis of NCAA Division 1 Football Metrics for Performance Insights. Using advanced data analysis techniques, this project merges multiple datasets to explore key performance indicators in college football. By examining offensive and defensive rankings, rushing and passing metrics, and special teams efficiency, the project aims to identify trends and factors that contribute to winning games. The goal is to provide actionable insights that challenge conventional wisdom, emphasizing the significance of offense and punt return efficiency over traditional defensive metrics."
   },
   {
@@ -85,8 +85,8 @@
       "title": "Money Manager Web App",
       "image": "assets/money-manager.png",
       "technologies": "Python, SQL, Flask, Jinja, HTML, CSS, and Javascript",
-      "githubLink": "https://github.com/ayushgupta35/Money-Manager-Web-App",
-      "demoLink": "https://drive.google.com/file/d/1sIHBKkWy6Iy_R9izKG1bbqEjOIgOEqMd/view?usp=sharing",
+      "resourcesLink": "https://github.com/ayushgupta35/Money-Manager-Web-App",
+      "presentationLink": "https://drive.google.com/file/d/1sIHBKkWy6Iy_R9izKG1bbqEjOIgOEqMd/view?usp=sharing",
       "description": "Money managing web application used for tracking expenses and budgets. Number of functionalities such as budgeting goals, expense listing, income tracking, currency conversion, and much more."
   },
   {
@@ -94,8 +94,8 @@
       "title": "eCommerce Auction Web App",
       "image": "assets/commerce.png",
       "technologies": "Python, SQL, Django, Jinja, HTML, and CSS",
-      "githubLink": "https://github.com/ayushgupta35/eCommerce-auction-website",
-      "demoLink": "",
+      "resourcesLink": "https://github.com/ayushgupta35/eCommerce-auction-website",
+      "presentationLink": "",
       "description": "ECommerce auction web application similar to eBay used for selling and buying goods. Number of functionalities such as user registration/authentication, creating listings for items, bidding/auction system, and much more."
   },
   {
@@ -103,8 +103,8 @@
       "title": "Stock Trading Simulation",
       "image": "assets/stock.png",
       "technologies": "Python, SQL, Flask, Jinja, APIs, HTML, and CSS",
-      "githubLink": "https://github.com/ayushgupta35/stock-trading-simulation",
-      "demoLink": "",
+      "resourcesLink": "https://github.com/ayushgupta35/stock-trading-simulation",
+      "presentationLink": "",
       "description": "Stock trading simulation web application used to simulate buying/selling of stocks and shares using real-time API market data. Number of functionalities such as user registration/authentication, buying/selling shares, trend data, and much more."
   },
   {
@@ -112,8 +112,8 @@
       "title": "Allergen Detection Scanner Web App",
       "image": "assets/allergen-scanner.png",
       "technologies": "Python, Flask, JavaScript, Jinja, OpenCV, PyTesseract, NLTK, HTML, and CSS",
-      "githubLink": "https://github.com/ayushgupta35/Allergen-Checker-App",
-      "demoLink": "",
+      "resourcesLink": "https://github.com/ayushgupta35/Allergen-Checker-App",
+      "presentationLink": "",
       "description": "Allergy detection web application similar to a label scanner used for detecting allergens in food products. Number of functionalities such as image upload/capture, allergen detection, managing allergen lists, and much more."
   },
   {
@@ -121,8 +121,8 @@
       "title": "Wiki Online Encyclopedia",
       "image": "assets/wiki.png",
       "technologies": "Python, SQL, Django, Jinja, Markdown, HTML, and CSS",
-      "githubLink": "https://github.com/ayushgupta35/wiki-online-encyclopedia",
-      "demoLink": "",
+      "resourcesLink": "https://github.com/ayushgupta35/wiki-online-encyclopedia",
+      "presentationLink": "",
       "description": "Wiki encyclopedia web app similar to Wikipedia used to create, edit, and view articles on various topics in collaboration with other users. Number of functionalities entry pages with Markdown-to-HTML conversion, a searchable interface, creation of new entries, editing capabilities, and a random entry generator."
   },
   {
@@ -130,8 +130,8 @@
       "title": "Personal Art Gallery",
       "image": "assets/art-website.png",
       "technologies": "HTML, CSS, and Javascript",
-      "githubLink": "https://github.com/ayushgupta12/art",
-      "demoLink": "https://ayushgupta.art",
+      "resourcesLink": "https://github.com/ayushgupta12/art",
+      "presentationLink": "https://ayushgupta.art",
       "description": "An online portfolio showcasing my artwork across various mediums, including pencil sketches, digital illustrations, and acrylic paintings. This gallery offers a clean, user-friendly design, highlighting each piece and my growth as an artist over time."
   },
   {
@@ -139,8 +139,8 @@
       "title": "U.S Hospital DRG Data Analytics",
       "image": "assets/hospital-analytics.png",
       "technologies": "Tableau",
-      "githubLink": "",
-      "demoLink": "https://tinyurl.com/2p84fju2",
+      "resourcesLink": "",
+      "presentationLink": "https://tinyurl.com/2p84fju2",
       "description": "Data analysis report of hospitals in the United States with trends in average costs of payments and number of discharges per body system impacted. Analysis can be leveraged by patients to determine cheaper hospitals to visit in a certain region of the United States."
   },
   {
@@ -148,8 +148,8 @@
       "title": "COVID-19 Worldwide Data Analytics",
       "image": "assets/covid-data.png",
       "technologies": "Microsoft Power BI",
-      "githubLink": "",
-      "demoLink": "https://tinyurl.com/33jrhsjk",
+      "resourcesLink": "",
+      "presentationLink": "https://tinyurl.com/33jrhsjk",
       "description": "Data analysis report of COVID-19 case data worldwide with trends of cases, deaths, recovered patients, and population in each country."
   },
   {
@@ -157,8 +157,8 @@
       "title": "Indian Retail Store Data Analytics",
       "image": "assets/indian-retail.png",
       "technologies": "Microsoft Power BI",
-      "githubLink": "",
-      "demoLink": "https://tinyurl.com/bde6b5j4",
+      "resourcesLink": "",
+      "presentationLink": "https://tinyurl.com/bde6b5j4",
       "description": "Data analysis report of 2022 Amazon sales data from a retail store selling Indian ethnic clothing. Trends of sales per category, average selling price, profits, quantity sold, and popularity of products per country. Analysis can be used to make decisions in inventory and pricing by the retailer."
   }
 ]
