@@ -1,504 +1,362 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Ayush's Portfolio</title>
-        <link rel="stylesheet" target="_blank" href="style.css">
-    </head>
-    <body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ayush's Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <section class="hero">
+      <div class="hero-pic">
+        <div class="inner-circle"></div>
+        <img
+          src="assets/home-img.jpg"
+          alt="Ayush Gupta"
+        />
+      </div>
+      <div class="hero-info">
+        <h1>Hey there! 👋 I’m Ayush Gupta</h1>
+        <h2>CS, Data Science, & Informatics @ UW Seattle  <img id="logo" src="assets/uw-logo.png"></h2>
+        <div class="logo-container">
+          <a href="https://github.com/ayushgupta35"
+            ><img src="assets/github_light.png" alt="github logo"
+          /></a>
+          <a href="https://linkedin.com/in/ayushgupta35"
+            ><img src="assets/linkedin_light.png" alt="linkedin logo"
+          /></a>
+          <a href="mailto:ayushg3512@gmail.com"
+            ><img src="assets/email_light.png" alt="email logo"
+          /></a>
+        </div>
+      </div>
+    </section>
+    <section class="blurb">
+      <ul> 
+        I’m an undergraduate student with a foundation in data science, software development, and automation. Here’s a snapshot of what I bring: 
+        <br><br> 
+        <li>👨‍💻 4+ years in software development and data analysis, focused on operational efficiency and innovation.</li> 
+        <li>💻 Backend and Frontend skills, including Python, Django, REST APIs, SQL, etc.</li> 
+        <li>☁️ Cloud computing and DevOps skills with tools like Docker, Kubernetes, Azure, etc.</li>
+        <li>📊 Data-driven problem solving, with strengths in data visualization and workflow automation.</li> 
+        <li>🤝 Collaborative leadership with strong communication, problem-solving, and project management skills.</li> 
+      </ul>
+    </section>
+    <section class="cta">
+      <a href="Ayush-Gupta.pdf" download>
+        <button class="btn download-btn">Download Resume</button>
+      </a>
+      <a href="mailto:ayushg3512@gmail.com"><button class="btn contact-btn" title="ayushg3512@gmail.com">Contact Me</button></a>
+    </section>
+    <section class="portfolio-skills">
+      <div class="btn-bg">
+        <button class="btn-2 active-btn" id="portfolio-btn">Projects</button>
+        <button class="btn-2" id="skills-btn">Skills</button>
+        <button class="btn-2" id="experience-btn">Experience</button>
+        <button class="btn-2" id="certifications-btn">Courses/Certifications</button>
+      </div>
+    </section>
 
-        <!-- navbar menu icon for mobile -->
-        <div class="mobile-navbar">
-            <div class="menu-icon">
-                <div class="menu-icon-lines"></div>
-                <div class="menu-icon-lines"></div>
-                <div class="menu-icon-lines"></div>
-            </div>
+
+    <section class="portfolio" id="portfolio">
+      <div class="wrapper project-wrapper">
+        <img src="assets/grocery-ml.png" alt="grocery-ml">
+        <h3>Grocery Store Business ML Model and Basket Analysis<br><button class="btn"><a href="project.html?id=grocery-ml">Click to see more -></a></button></h3>
+      </div>
+      
+      <div class="wrapper project-wrapper">
+          <img src="assets/toh.png" alt="toh">
+          <h3>Towers of Hanoi AI Solver<br><button class="btn"><a href="project.html?id=toh">Click to see more -></a></button></h3>
+      </div>
+      
+      <div class="wrapper project-wrapper">
+          <img src="assets/pacman.png" alt="pacman">
+          <h3>AI Pacman<br><button class="btn"><a href="project.html?id=pacman">Click to see more -></a></button></h3>
+      </div>
+      
+      <div class="wrapper project-wrapper">
+          <img src="assets/rmp-extension.png" alt="rmp-extension">
+          <h3>Chrome Extension - UW RateMyProf Assistant<br><button class="btn"><a href="project.html?id=rmp-extension">Click to see more -></a></button></h3>
+      </div>
+      
+      <div class="wrapper project-wrapper">
+          <img src="assets/coursekeeper.png" alt="coursekeeper">
+          <h3>Chrome Extension - UW CourseKeeper<br><button class="btn"><a href="project.html?id=coursekeeper">Click to see more -></a></button></h3>
+      </div>
+
+      <div class="wrapper project-wrapper">
+        <img src="assets/uw-calendar-extension.png" alt="uw-calendar-extension">
+        <h3>Chrome Extension - UW Calendar Exporter<br><button class="btn"><a href="project.html?id=uw-calendar-extension">Click to see more -></a></button></h3>
+    </div>
+      
+      <div class="wrapper project-wrapper">
+          <img src="assets/chronoVRse.png" alt="chronoVRse">
+          <h3>Time Travel VR App Prototype<br><button class="btn"><a href="project.html?id=chronoVRse">Click to see more -></a></button></h3>
+      </div>
+      
+      <div class="wrapper project-wrapper">
+          <img src="assets/headsora.png" alt="headsora">
+          <h3>AI Mental Health App Prototype<br><button class="btn"><a href="project.html?id=headsora">Click to see more -></a></button></h3>
+      </div>
+      
+      <div class="wrapper project-wrapper">
+          <img src="assets/cfb.png" alt="cfb">
+          <h3>College Football Predictive Analysis<br><button class="btn"><a href="project.html?id=cfb">Click to see more -></a></button></h3>
+      </div>
+      
+      <div class="wrapper project-wrapper">
+          <img src="assets/money-manager.png" alt="money-manager">
+          <h3>Money Manager Web App<br><button class="btn"><a href="project.html?id=money-manager">Click to see more -></a></button></h3>
+      </div>
+      
+      <div class="wrapper project-wrapper">
+          <img src="assets/commerce.png" alt="eCommerce">
+          <h3>eCommerce Auction Web App<br><button class="btn"><a href="project.html?id=commerce">Click to see more -></a></button></h3>
+      </div>
+      
+      <div class="wrapper project-wrapper">
+          <img src="assets/stock.png" alt="stock-trading-simulation">
+          <h3>Stock Trading Simulation Web App<br><button class="btn"><a href="project.html?id=stock">Click to see more -></a></button></h3>
+      </div>
+      
+      <div class="wrapper project-wrapper">
+          <img src="assets/allergen-scanner.png" alt="allergen-scanner">
+          <h3>Allergen Detection Scanner Web App<br><button class="btn"><a href="project.html?id=allergen-scanner">Click to see more -></a></button></h3>
+      </div>
+      
+      <div class="wrapper project-wrapper">
+          <img src="assets/wiki.png" alt="wiki-online-encyclopedia">
+          <h3>Wiki Online Encyclopedia Web App<br><button class="btn"><a href="project.html?id=wiki">Click to see more -></a></button></h3>
+      </div>
+      
+      <div class="wrapper project-wrapper">
+          <img src="assets/art-website.png" alt="art-website">
+          <h3>Personal Art Gallery Web App<br><button class="btn"><a href="project.html?id=art-website">Click to see more -></a></button></h3>
+      </div>
+      
+      <div class="wrapper project-wrapper">
+          <img src="assets/hospital-analytics.png" alt="hospital-analytics">
+          <h3>U.S Hospital DRG Data Analytics<br><button class="btn"><a href="project.html?id=hospital-analytics">Click to see more -></a></button></h3>
+      </div>
+      
+      <div class="wrapper project-wrapper">
+          <img src="assets/covid-data.png" alt="covid-data">
+          <h3>COVID-19 Worldwide Data Analytics<br><button class="btn"><a href="project.html?id=covid-data">Click to see more -></a></button></h3>
+      </div>
+      
+      <div class="wrapper project-wrapper">
+          <img src="assets/indian-retail.png" alt="indian-retail">
+          <h3>Indian Retail Store Business Analytics<br><button class="btn"><a href="project.html?id=indian-retail">Click to see more -></a></button></h3>
+      </div>    
+    
+    </section>
+
+    
+    <section class="skills" id="skills">
+      <div class="skills-container">
+        <div class="skill-item">
+          <h3>Software Development</h3>
+          <article class="software-skills">
+            <p>Python</p>
+            <p>Java</p>
+            <p>C</p>
+            <p>C++</p>
+            <p>C#</p>
+            <p>AI</p>
+            <p>Machine Learning</p>
+            <p>RESTful APIs</p>
+            <p>DevOps</p>
+            <p>CI/CD</p>
+            <p>Containerization</p>
+            <p>Docker</p>
+            <p>Kubernetes</p>
+            <p>Spring</p>
+            <p>Linux</p>
+            <p>AWS</p>
+            <p>Azure</p>
+            <p>Flask</p>
+            <p>Django</p>
+            <p>React</p>
+            <p>Node.js</p>
+            <p>JavaScript</p>
+            <p>HTML</p>
+          </article>
         </div>
 
-        <!-- navbar -->
-        <nav class="navbar">
-            <ul class="link-group">
-                <li class="link active"><a href="#">home</a></li>
-                <li class="link"><a href="#project-section">projects</a></li>
-                <li class="link"><a href="#skills-section">skills</a></li>
-                <li class="link"><a href="#courses-section">courses</a></li>
-                <li class="link"><a href="#certifications-awards-section">certifications/awards</a></li>
-                <li class="link"><a href="#contact-section">contact</a></li>
-            </ul>
-        </nav>
+        <div class="skill-item">
+          <h3>Data Science</h3>
+          <article class="data-science-skills">
+            <p>R</p>
+            <p>MySQL</p>
+            <p>NoSQL</p>
+            <p>PostgreSQL</p>
+            <p>Business Intelligence</p>
+            <p>Data Models</p>
+            <p>ETL Design</p>
+            <p>Data Architecture</p>
+            <p>Distributed Storage</p>
+            <p>Data Mining</p>
+            <p>Spark</p>
+            <p>Pandas</p>
+            <p>Tableau</p>
+            <p>Power BI</p>
+            <p>Excel</p>
+            <p>Relational Databases</p>
+          </article>
+        </div>
 
-        <!-- home section -->
-        <section id="home-section" class="home-section active">
-            <div class="home-info">
-                <h1>Ayush Gupta</h1>
-                <h3>CS @ University of Washington</h3>
-                <p>Resilient and dynamic Computer Science student with a strong foundation in data science, software engineering, and UI/UX development. Brings a robust skill 
-                    set and hands-on experience in managing and analyzing complex datasets, developing automation systems, and 
-                    collaborating in cross-functional teams. Eager to apply analytical thinking and quick learning abilities to drive innovative projects and contribute to impactful solutions.</p>            
-                <button class="download-cv-btn"><a href="Ayush-Gupta.pdf" download="Ayush-Gupta.pdf">Download Resume</a></button>
-            </div>
-            <img src="img/home-img.jpg" class="home-img" alt="home-img">
-        </section>
+        <div class="skill-item">
+          <h3>Automation & Tools</h3>
+          <article class="automation-tools-skills">
+            <p>Selenium</p>
+            <p>Postman</p>
+            <p>Web Services</p>
+            <p>Salesforce CRM</p>
+            <p>Oracle CRM</p>
+            <p>Oracle Fusion</p>
+            <p>GitHub</p>
+            <p>Figma</p>
+          </article>
+        </div>
 
-        <!-- project section -->
-        <section id="project-section" class="project-section active">
-            <section class="about-section">
-                <p>Resilient and dynamic Computer Science student with a strong foundation in data science, software engineering, and UI/UX development. Brings a robust skill 
-                    set and hands-on experience in managing and analyzing complex datasets, developing automation systems, and 
-                    collaborating in cross-functional teams. Eager to apply analytical thinking and quick learning abilities to drive innovative projects and contribute to impactful solutions.</p>            
-                <button class="download-cv-btn"><a href="Ayush-Gupta.pdf" download="Ayush-Gupta.pdf">Download Resume</a></button>
-            </section>
-            <h1 class="project-heading">some of my personal projects</h1>
-            <div class="project-container">
-                <div class="project-card">
-                    <img src="img/grocery-ml.png" class="project-img" alt="grocery-ml">
-                    <div class="project-content">
-                        <h1 class="project-title">Grocery Store Business ML Model and Data Analysis</h1>
-                        <p class="project-info">Tableau, R, Python</p>
-                        <div class="project-btn-grp">
-                            <button class="project-btn github"><a target="_blank" href="https://tinyurl.com/43swtj4c">GitHub Repo</a></button>
-                            <button class="project-btn live"><a target="_blank" href="https://tinyurl.com/52zh8z33">project link</a></button>
-                        </div>
-                        <p class="project-description">
-                            Created a machine learning linear regression model that uses data 
-                            from an Australian grocery store to train the model to predict the total 
-                            sales, total cost, and quantity of items sold for the store as a whole. Model could be used to also make same predictions 
-                            for each category and subcategory of items sold.
-                        </p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <img src="img/toh.png" class="project-img" alt="toh">
-                    <div class="project-content">
-                        <h1 class="project-title">Towers of Hanoi AI Solver</h1>
-                        <p class="project-info">Python</p>
-                        <div class="project-btn-grp">
-                            <button class="project-btn github"><a target="_blank" href="https://github.com/ayushgupta35/Towers-of-Hanoi-Q-Learning-Solver/tree/main">GitHub</a></button>
-                        </div>
-                        <p class="project-description">The project explores reinforcement learning techniques, specifically Value Iteration and Q-Learning, applied to a Markov Decision Process 
-                            (MDP) in the context of solving the Towers of Hanoi (TOH) puzzle. It demonstrates how an agent can learn optimal policies through both model-based planning 
-                            (Value Iteration) and model-free learning (Q-Learning) in a simulated environment.
-                        </p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <img src="img/pacman.png" class="project-img" alt="pacman">
-                    <div class="project-content">
-                        <h1 class="project-title">AI Pacman</h1>
-                        <p class="project-info">Python</p>
-                        <div class="project-btn-grp">
-                            <button class="project-btn github"><a target="_blank" href="https://github.com/ayushgupta35/Towers-of-Hanoi-Q-Learning-Solver/tree/main">GitHub</a></button>
-                        </div>
-                        <p class="project-description">The project explores adversarial search techniques, specifically Minimax, Alpha-Beta Pruning, and Expectimax, applied to a multi-agent environment 
-                            in the context of the classic Pacman game. It demonstrates how agents can navigate competitive and uncertain environments by employing strategic decision-making techniques, 
-                            from deterministic adversarial play (Minimax) to probabilistic modeling (Expectimax), showcasing how each approach impacts performance in complex game scenarios.
-                        </p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <img src="img/uw-calendar-extension.png" class="project-img" alt="uw-calendar-extension">
-                    <div class="project-content">
-                        <h1 class="project-title">UW Calendar Exporter</h1>
-                        <p class="project-info">JavaScript</p>
-                        <div class="project-btn-grp">
-                            <button class="project-btn github"><a target="_blank" href="https://github.com/ayushgupta35/UW-Calendar-Exporter">GitHub</a></button>
-                            <button class="project-btn live"><a target="_blank" href="https://chromewebstore.google.com/detail/uw-calendar-exporter/gkckamjhkkkdogmgbhabjecjjeecpbmb?authuser=0&hl=en">Web Store</a></button>
-                        </div>
-                        <p class="project-description">Automating class scheduling with seamless calendar integration for University of Washington students. This project allows direct export of course details from the UW 
-                            registration page into Google or Apple Calendar, filling in essential information like course names, locations, and class times. Designed to streamline the registration process, it eliminates the 
-                            need for manual calendar entry and simplifies schedule management, providing an efficient, user-focused solution for academic planning.
-                        </p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <img src="img/rmp-extension.png" class="project-img" alt="rmp-extension">
-                    <div class="project-content">
-                        <h1 class="project-title">RateMyProf Assistant for UW MyPlan Chrome Extension</h1>
-                        <p class="project-info">JavaScript</p>
-                        <div class="project-btn-grp">
-                            <button class="project-btn github"><a target="_blank" href="https://github.com/ayushgupta35/RateMyProfessors/tree/main">GitHub</a></button>
-                            <button class="project-btn live"><a target="_blank" href="https://chromewebstore.google.com/detail/ratemyprof-assistant-for/ofkeokbllkoiceaekhaljfjbjegahaej?authuser=0&hl=en">Web Store</a></button>
-                        </div>
-                        <p class="project-description">Enhancing Course Selection with Professor Ratings for Informed Decisions. This project integrates 
-                            real-time data from RateMyProfessors into the University of Washington's MyPlan platform. By displaying professor ratings, 
-                            difficulty, and "Would Take Again" percentages, it helps students make data-driven decisions when selecting courses. The goal 
-                            is to streamline the registration process and provide valuable insights directly within the course planning tool.
-                        </p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <img src="img/coursekeeper.png" class="project-img" alt="coursekeeper">
-                    <div class="project-content">
-                        <h1 class="project-title">UW CourseKeeper Chrome Extension</h1>
-                        <p class="project-info">JavaScript</p>
-                        <div class="project-btn-grp">
-                            <button class="project-btn github"><a target="_blank" href="https://github.com/ayushgupta35/RateMyProfessors/tree/main">GitHub</a></button>
-                            <button class="project-btn live"><a target="_blank" href="https://chromewebstore.google.com/detail/uw-coursekeeper/ipdnhklbnjilkkcdlfneldhmgpbjmimf?authuser=0&hl=en">Web Store</a></button>
-                        </div>
-                        <p class="project-description">Streamlining UW Course Registration with One-Click SLN Access. Frustrated by my 
-                            own struggles of quickly finding and typing in SLN codes before classes filled up. Notifications from 
-                            MyPlan and Notify.UW coming in, but scrambling to locate the right code. Now, automatic synchronization 
-                            of notifications with SLN codes. Easy dropdown access directly on the registration page. Fewer errors, 
-                            faster input. A tool designed to help students avoid the same struggles, making registration smooth and efficient.
-                        </p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <img src="img/chronoVRse.png" class="project-img" alt="chronoVRSe">
-                    <div class="project-content">
-                        <h1 class="project-title">Time Travel VR App Prototype</h1>
-                        <p class="project-info">Figma</p>
-                        <div class="project-btn-grp">
-                            <button class="project-btn github"><a target="_blank" href="https://docs.google.com/presentation/d/13eyvmaTNaW1xC_xKAgDL2KqUohmNsShN4OJi5SkoLqY/edit?usp=sharing">Presentation</a></button>
-                            <button class="project-btn live"><a target="_blank" href="https://www.figma.com/file/nzcfhKonQDWTLhKwa6yJNz/Prototype-Patakhas-2.0?type=design&node-id=0-1&mode=design&t=tIDodpWYHdcw9cEZ-0">project link</a></button>
-                        </div>
-                        <p class="project-description"> This app leverages virtual reality to enable users to explore historical events and future scenarios in an immersive, educational environment. It allows users to navigate through time with a simple interface, experiencing the richness of history and the possibilities of the future firsthand.
-                        </p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <img src="img/headsora.png" class="project-img" alt="grocery-ml">
-                    <div class="project-content">
-                        <h1 class="project-title">AI Mental Health App Prototype</h1>
-                        <p class="project-info">Figma</p>
-                        <div class="project-btn-grp">
-                            <button class="project-btn github"><a target="_blank" href="https://tinyurl.com/32rrwkrj">Presentation</a></button>
-                            <button class="project-btn live"><a target="_blank" href="https://tinyurl.com/4pue3h85">project link</a></button>
-                        </div>
-                        <p class="project-description">AI-powered virtual therapist assistant created for mental health therapy. 
-                            Using cutting-edge machine learning and natural language processing methods, 
-                            Headsora provides an easy way for people to communicate with a virtual counselor, 
-                            boosting emotional well-being and encouraging self-improvement. 
-                            Goal is to remove obstacles like cost, stigma, and location that prevent people from getting assistance.
-                        </p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <img src="img/cfb.png" class="project-img" alt="cfb">
-                    <div class="project-content">
-                        <h1 class="project-title">College Football Predictive Analysis</h1>
-                        <p class="project-info">R</p>
-                        <div class="project-btn-grp">
-                            <button class="project-btn github"><a target="_blank" href="https://docs.google.com/presentation/d/1m1ssz-CM0EARm2hLDzsp1sV6Nnwn1biN7QVeZVgP5po/edit?usp=sharing">Presentation</a></button>
-                            <button class="project-btn live"><a target="_blank" href="https://drive.google.com/drive/folders/1t53l4c6Z8kZBftdP7AbkP2kfkFcO0NGG?usp=sharing">project link</a></button>
-                        </div>
-                        <p class="project-description">Data-Driven Analysis of NCAA Division 1 Football Metrics for Performance Insights.
-                            Using advanced data analysis techniques, this project merges multiple datasets to explore key performance indicators 
-                            in college football. By examining offensive and defensive rankings, rushing and passing metrics, and special teams 
-                            efficiency, the project aims to identify trends and factors that contribute to winning games. The goal is to provide 
-                            actionable insights that challenge conventional wisdom, emphasizing the significance of offense and punt return 
-                            efficiency over traditional defensive metrics.
-                        </p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <img src="img/money-manager.png" class="project-img" alt="money-manager">
-                    <div class="project-content">
-                        <h1 class="project-title">Money Manager Web App</h1>
-                        <p class="project-info">Python, SQL, Flask, Jinja, HTML, CSS, and Javascript</p>
-                        <div class="project-btn-grp">
-                            <button class="project-btn github"><a target="_blank" href="https://github.com/ayushgupta35/Money-Manager-Web-App">GitHub Repo</a></button>
-                            <button class="project-btn live"><a target="_blank" href="https://drive.google.com/file/d/1sIHBKkWy6Iy_R9izKG1bbqEjOIgOEqMd/view?usp=sharing">project link</a></button>
-                        </div>
-                        <p class="project-description">
-                            Money managing web application used for tracking expenses and budgets. 
-                            Number of functionalities such as budgeting goals, expense listing, 
-                            income tracking, currency conversion, and much more.
-                        </p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <img src="img/commerce.png" class="project-img" alt="eCommerce">
-                    <div class="project-content">
-                        <h1 class="project-title">eCommerce Auction Web App</h1>
-                        <p class="project-info">Python, SQL, Django, Jinja, HTML, and CSS</p>
-                        <div class="project-btn-grp">
-                            <button class="project-btn github"><a target="_blank" href="https://github.com/ayushgupta35/eCommerce-auction-website">GitHub Repo</a></button>
-                        </div>
-                        <p class="project-description">
-                            ECommerce auction web application similar to eBay used for selling and buying goods. 
-                            Number of functionalities such as user registration/authentication, 
-                            creating listings for items, bidding/auction system, and much more.
-                        </p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <img src="img/stock.png" class="project-img" alt="stock-trading-simulation">
-                    <div class="project-content">
-                        <h1 class="project-title">Stock Trading Simulation</h1>
-                        <p class="project-info">Python, SQL, Flask, Jinja, APIs, HTML, and CSS</p>
-                        <div class="project-btn-grp">
-                            <button class="project-btn github"><a target="_blank" href="https://github.com/ayushgupta35/stock-trading-simulation">GitHub Repo</a></button>
-                        </div>
-                        <p class="project-description">
-                            Stock trading silulation web application used to simulate buying/selling of stocks and shares
-                            using real-time API market data. Number of functionalities such as user registration/authentication, 
-                            buying/selling shares, trend data, and much more.
-                        </p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <img src="img/allergen-scanner.png" class="project-img" alt="allergen-scanner">
-                    <div class="project-content">
-                        <h1 class="project-title">Allergen Detection Scanner Web App</h1>
-                        <p class="project-info">Python, Flask, JavaScript, Jinja, OpenCV, PyTesseract, NLTK, HTML, and CSS</p>
-                        <div class="project-btn-grp">
-                            <button class="project-btn github"><a target="_blank" href="https://github.com/ayushgupta35/Allergen-Checker-App">GitHub Repo</a></button>
-                        </div>
-                        <p class="project-description">
-                            Allergy detection web application similar to a label scanner used for detecting allergens 
-                            in food products. Number of functionalities such as image upload/capture, allergen detection, 
-                            managing allergen lists, and much more.
-                        </p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <img src="img/wiki.png" class="project-img" alt="wiki-online-encyclopedia">
-                    <div class="project-content">
-                        <h1 class="project-title">Wiki Online Encyclopedia</h1>
-                        <p class="project-info">Python, SQL, Django, Jinja, Markdown, HTML, and CSS</p>
-                        <div class="project-btn-grp">
-                            <button class="project-btn github"><a target="_blank" href="https://github.com/ayushgupta35/wiki-online-encyclopedia">GitHub Repo</a></button>
-                        </div>
-                        <p class="project-description">
-                            Wiki encyclopedia web app similar to Wikipedia used to create, edit, and view articles on various topics in collaboration with other users. 
-                            Number of functionalities entry pages with Markdown-to-HTML conversion, a searchable interface, creation of new entries, 
-                            editing capabilities, and a random entry generator.
-                        </p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <img src="img/art-website.png" class="project-img" alt="art-website">
-                    <div class="project-content">
-                        <h1 class="project-title">Personal Art Gallery</h1>
-                        <p class="project-info">HTML, CSS, and Javascript</p>
-                        <div class="project-btn-grp">
-                            <button class="project-btn github"><a target="_blank" href="https://github.com/ayushgupta12/art">GitHub Repo</a></button>
-                            <button class="project-btn live"><a target="_blank" href="https://ayushgupta.art">project link</a></button>
-                        </div>
-                        <p class="project-description">
-                            Portfolio of my art projects of different types of mediums throughout the years.
-                        </p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <img src="img/hospital-analytics.png" class="project-img" alt="hospital-analytics">
-                    <div class="project-content">
-                        <h1 class="project-title">U.S Hospital DRG Data Analytics</h1>
-                        <p class="project-info">Tableau</p>
-                        <div class="project-btn-grp">
-                            <button class="project-btn live"><a target="_blank" href="https://tinyurl.com/2p84fju2">project link</a></button>
-                        </div>
-                        <p class="project-description">
-                            Data analysis report of hospitals in the United States with trends in average costs of 
-                            payments and number of discharges per body system impacted. Analysis can be leveraged 
-                            by patients to determine cheaper hospitals to visit in a certain region of the United States.
-                        </p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <img src="img/covid-data.png" class="project-img" alt="covid-data">
-                    <div class="project-content">
-                        <h1 class="project-title">COVID-19 Worldwide Data Analytics</h1>
-                        <p class="project-info">Microsoft Power BI</p>
-                        <div class="project-btn-grp">
-                            <button class="project-btn live"><a target="_blank" href="https://tinyurl.com/33jrhsjk">project link</a></button>
-                        </div>
-                        <p class="project-description">
-                            Data analysis report of COVID-19 case data worldwide with trends of cases, deaths, recovered patients, 
-                            and population in each country.
-                        </p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <img src="img/indian-retail.png" class="project-img" alt="indian-retail">
-                    <div class="project-content">
-                        <h1 class="project-title">Indian Retail Store Data Analytics</h1>
-                        <p class="project-info">Microsoft Power BI</p>
-                        <div class="project-btn-grp">
-                            <button class="project-btn live"><a target="_blank" href="https://tinyurl.com/bde6b5j4">project link</a></button>
-                        </div>
-                        <p class="project-description">
-                            Data analysis report of 2022 Amazon sales data from a retail store selling Indian ethnic clothing. 
-                            Trends of sales per category, average selling price, profits, quantity sold, and popularity of 
-                            products per country. Analysis can be used to make decisions in inventory and pricing by the retailer.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <div class="skill-item">
+          <h3>Soft Skills</h3>
+          <article class="soft-skills">
+            <p>Collaboration</p>
+            <p>Communication</p>
+            <p>Adaptability</p>
+            <p>Customer Obsession</p>
+            <p>Attention to Detail</p>
+            <p>User-Centered Design</p>
+          </article>
+        </div>     
+      </div> 
+    </section>
 
-        <!-- skills section -->
-        <section id="skills-section" class="skills-section active">
-            <h1 class="skills-heading">skills</h1>
-            <div class="skills-container">
-                <div class="skill-card">
-                    <img src="img/python.png" class="skill-img" alt="python">
-                    <h1 class="skill-name">python</h1>
-                </div>
-                <div class="skill-card">
-                    <img src="img/java.png" class="skill-img" alt="java">
-                    <h1 class="skill-name">java</h1>
-                </div>
-                <div class="skill-card">
-                    <img src="img/figma.png" class="skill-img" alt="figma">
-                    <h1 class="skill-name">figma</h1>
-                </div>
-                <div class="skill-card">
-                    <img src="img/sql.png" class="skill-img" alt="sql">
-                    <h1 class="skill-name">sql</h1>
-                </div>
-                <div class="skill-card">
-                    <img src="img/DBMS.png" class="skill-img" alt="DBMS">
-                    <h1 class="skill-name">DBMS</h1>
-                </div>
-                <div class="skill-card">
-                    <img src="img/R.png" class="skill-img" alt="R">
-                    <h1 class="skill-name">R</h1>
-                </div>
-                <div class="skill-card">
-                    <img src="img/html.png" class="skill-img" alt="html/css">
-                    <h1 class="skill-name">html/css</h1>
-                </div>
-                <div class="skill-card">
-                    <img src="img/javascript.png" class="skill-img" alt="javascript">
-                    <h1 class="skill-name">javascript</h1>
-                </div>
-                <div class="skill-card">
-                    <img src="img/flask.png" class="skill-img" alt="flask">
-                    <h1 class="skill-name">flask</h1>
-                </div>
-                <div class="skill-card">
-                    <img src="img/django.png" class="skill-img" alt="django rest api">
-                    <h1 class="skill-name">django REST API</h1>
-                </div>
-                <div class="skill-card">
-                    <img src="img/tableau.png" class="skill-img" alt="tableau">
-                    <h1 class="skill-name">tableau</h1>
-                </div>
-                <div class="skill-card">
-                    <img src="img/powerbi.png" class="skill-img" alt="powerbi">
-                    <h1 class="skill-name">Microsoft Power BI</h1>
-                </div>
-                <div class="skill-card">
-                    <img src="img/selenium.png" class="skill-img" alt="selenium">
-                    <h1 class="skill-name">selenium</h1>
-                </div>
-                <div class="skill-card">
-                    <img src="img/excel.png" class="skill-img" alt="excel">
-                    <h1 class="skill-name">excel</h1>
-                </div>
-                <div class="skill-card">
-                    <img src="img/c++.png" class="skill-img" alt="c++">
-                    <h1 class="skill-name">c++</h1>
-                </div>
-                <div class="skill-card">
-                    <img src="img/c.png" class="skill-img" alt="c">
-                    <h1 class="skill-name">c</h1>
-                </div>
-                <div class="skill-card">
-                    <img src="img/aws.png" class="skill-img" alt="aws">
-                    <h1 class="skill-name">AWS</h1>
-                </div>
-                <div class="skill-card">
-                    <img src="img/oracle.png" class="skill-img" alt="oracle">
-                    <h1 class="skill-name">oracle</h1>
-                </div>
-                <div class="skill-card">
-                    <img src="img/salesforce.png" class="skill-img" alt="salesforce">
-                    <h1 class="skill-name">salesforce</h1>
-                </div>
-                <div class="skill-card">
-                    <img src="img/github.png" class="skill-img" alt="github">
-                    <h1 class="skill-name">github</h1>
-                </div>
-                <div class="skill-card">
-                    <img src="img/jira.png" class="skill-img" alt="jira">
-                    <h1 class="skill-name">jira</h1>
-                </div>
-            </div>
-        </section>
-
-
-        <section id="container" class="container">
-            <!-- courses section -->
-            <section id="courses-section" class="courses-section active">
-                <h1>Relevant Courses</h1>
-                <h3>UW Courses Taken</h3>
-                <ul>
-                    <li>CSE 446 Machine Learning</li>
-                    <li>CSE 473 Artificial Intelligence</li>
-                    <li>CSE 421 Algorithms</li>
-                    <li>CSE 332 Data Structures & Parallelism</li>
-                    <li>CSE 344 SQL & Databases</li>
-                    <li>CSE 331 Software Design & Implementation</li>
-                    <li>CSE 351 Hardware/Software Interface</li>
-                    <li>CSE 427 Computational Biology</li>
-                    <li>INFO 200 User Experience & Design</li>
-                    <li>INFO 201 R & Data Science</li>
-                    <li>SOC 225 Data & Society</li>
-                </ul>
-                <h3>Other Courses</h3>
-                <ul>
-                    <li>Harvard's CS50 Intro to Computer Science</li>
-                    <li>Harvard's CS50 Web Development</li>
-                    <li>Georgia Tech Intro to C++</li>
-                </ul>
-            </section>
-
-            <!-- certications and awards section -->
-            <section id="certifications-awards-section" class="certifications-awards-section active">
-                <h1>Certifications & Awards</h1>
-                <h3>Certifications</h3>
-                <ul>
-                    <li>Oracle - MySQL Database Service Explorer</li>
-                    <li>GitHub - All In for Students Open Source Contributor</li>
-                    <li>Dubstech - Data Visualization in Tableau & Power BI</li>
-                    <li>Salesforce - Opportunity Management Training</li>
-                    <li>Microsoft 365 - Master of Excel</li>
-                </ul>
-                <h3>Awards</h3>
-                <ul>
-                    <li>National Merit Scholorship Corporation - Scholarship Recipient</li>
-                    <li>University of Washington - Purple & Gold Scholarship</li>
-                    <li>Robert Half International - Student Scholar</li>
-                </ul>
-            </section>
-        </section>
-
-        <!-- contact section -->
-        <footer id="contact-section">
-            <div class="contact">
-                <h3>Contact:</h3>
-                <h5><a target="_blank" href="mailto:ayushg3512@gmail.com">ayushg3512@gmail.com</a></h5>
-                <div class="links">
-                    <a target="_blank" href="https://www.linkedin.com/in/ayushgupta35"><img src="img/linkedin.png" alt="linkedin"></a>
-                </div>
-                <div class="links">
-                    <a target="_blank" href="mailto:ayushg3512@gmail.com"><img src="img/mail.png" alt="mail"></a>
-                </div>
-            </div>
-
-            <form action="https://formspree.io/f/xjvqyane" method="POST">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-                
-                <div class="submit-button">
-                    <input type="submit" value="Submit">
-                </div>
-            </form>
-        </footer>
-
-        <script src="app.js"></script>
+    <section class="skills experience" id="experience">
+      <div class="experience-container">
+        <div class="experience-item">
+          <h3>Backend Team Lead</h3>
+          <p class="company"><img id="logo" src="assets/flow-logo.png"> Flow AI</p>
+          <p>October 2023 - Present</p>
+          <ul>
+            <li>Led a team of 5 interns to deliver an AI B2B SaaS platform, improving sales rep efficiency by 23%.</li>
+            <li>Designed and implemented secure server-side features using Python & Django; integrated 20+ APIs from ServiceNow, HubSpot, Zoom, and Salesforce.</li>
+            <li>Optimized CI/CD pipelines, managing Azure infrastructure & product launch with Docker & Kubernetes.</li>
+            <li>Collaborated cross-functionally with Agile practices, enhancing project delivery speed and quality.</li>
+          </ul>
+        </div>
         
-    </body>
+        <div class="experience-item">
+          <h3>Undergraduate Teaching Assistant</h3>
+          <p class="company"><img id="logo" src="assets/uw-logo.png"> University of Washington Information School</p>
+          <p>September 2024 – Present</p>
+          <ul>
+            <li>Mentored 25 students weekly on programming fundamentals in R, providing personalized support.</li>
+            <li>Created an inclusive learning environment, improving overall student performance and engagement.</li>
+          </ul>
+        </div>
+        
+        <div class="experience-item">
+          <h3>Data Analytics & Automation Intern</h3>
+          <p class="company"><img id="logo" src="assets/nsight-logo.png"> Nsight, Inc.</p>
+          <p>June 2024 - August 2024</p>
+          <ul>
+            <li>Automated lead-to-opportunity workflows in Salesforce, increasing operational efficiency by 62% through the use of Python and Excel-based automation.</li>
+            <li>Analyzed and validated extensive Oracle and Salesforce datasets, ensuring data integrity and accuracy.</li>
+            <li>Spearheaded research initiatives, collaborating with 10+ vendors to deliver consulting insights; maintained comprehensive project documentation and SOPs.</li>
+          </ul>
+        </div>
+        
+        <div class="experience-item">
+          <h3>Software Automation Intern</h3>
+          <p class="company"><img id="logo" src="assets/seam-logo.png"> Seam</p>
+          <p>June 2024 - August 2024</p>
+          <ul>
+            <li>Developed Selenium-based web scraping systems, automating data extraction across 20+ sources, processing over 10,000 data points daily.</li>
+            <li>Built automation workflows in Python for diverse industries, including real estate and product reviews, enhancing data accessibility and user experience.</li>
+          </ul>
+        </div>
+
+        <div class="experience-item">
+          <h3>Apprentice - All In For Students</h3>
+          <p class="company"><img id="logo" src="assets/github-logo.png" alt="GitHub Logo"> GitHub</p>
+          <p>Jan 2024 - Mar 2024 · 3 mos</p>
+          <ul>
+            <li>Selected for the 2024 cohort, completed advanced Career Readiness Workshops, and provided open source and DevOps expertise.</li>
+            <li>Participated in mock interviews and workshops with Major League Hacking, enhancing professional skills.</li>
+          </ul>
+        </div> 
+        
+        <div class="experience-item">
+          <h3>Undergraduate DevOps Researcher</h3>
+          <p class="company"><img id="logo" src="assets/uw-logo.png"> SEAL Lab, University of Washington</p>
+          <p>September 2023 - December 2023</p>
+          <ul>
+            <li>Committed 15+ hours weekly to DevOps research, gaining experience in technical writing, internal communication, and automation development.</li>
+          </ul>
+        </div>        
+      </div>
+    </section>
+
+    <section class="skills certifications" id="certifications">
+      <div class="certifications-container">
+        <div class="certification-item">
+          <h3>UW Courses Taken</h3>
+          <ul>
+            <li><b>CSE 446</b> Machine Learning</li>
+            <li><b>CSE 473</b> Artificial Intelligence</li>
+            <li><b>CSE 421</b> Algorithms</li>
+            <li><b>CSE 332</b> Data Structures & Parallelism</li>
+            <li><b>CSE 344</b> SQL & Databases</li>
+            <li><b>CSE 331</b> Software Design & Implementation</li>
+            <li><b>CSE 351</b> Hardware/Software Interface</li>
+            <li><b>CSE 427</b> Computational Biology</li>
+            <li><b>INFO 200</b> User Experience & Design</li>
+            <li><b>INFO 201</b> R & Data Science</li>
+            <li><b>SOC 225</b> Data & Society</li>
+        </div>
+    
+        <div class="certification-item">
+          <h3>Other Courses</h3>
+          <ul>
+            <li><b>Harvard</b> - CS50 Intro to Computer Science</li>
+            <li><b>Harvard</b> - CS50 Web Development</b></li>
+            <li><b>Georgia Tech</b> - Intro to C++</b></li>
+          </ul>
+        </div>
+    
+        <div class="certification-item">
+          <h3>Certifications</h3>
+          <ul>
+            <li><b>Oracle</b> - MySQL Database Service Explorer</li>
+            <li><b>GitHub</b> - All In for Students Open Source Contributor</li>
+            <li><b>Dubstech</b> - Data Visualization in Tableau & Power BI</li>
+            <li><b>Salesforce</b> - Opportunity Management Training</li>
+            <li><b>Microsoft 365</b> - Master of Excel</li>
+          </ul>
+        </div>
+    
+        <div class="certification-item">
+          <h3>Awards</h3>
+          <ul>
+            <li><b>National Merit Scholarship</b> - Top 1,000 students nationwide</li>
+            <li><b>University of Washington</b> Purple & Gold Scholar - Highest university level</li>
+            <li><b>Robert Half</b> Student Scholar - Sole award recipient</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    
+    <footer>
+      <p>&copy Ayush Gupta 2024</p>
+    </footer>
+  </body>
 </html>
