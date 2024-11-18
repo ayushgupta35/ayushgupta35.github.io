@@ -33,7 +33,7 @@
       "technologies": "JavaScript",
       "resourcesLink": "https://github.com/ayushgupta35/UW-Calendar-Exporter",
       "presentationLink": "https://chromewebstore.google.com/detail/uw-calendar-exporter/gkckamjhkkkdogmgbhabjecjjeecpbmb?authuser=0&hl=en",
-      "description": "40+ Users. Streamlining class scheduling for University of Washington students with automated calendar integration. This project enables direct export of course details from the UW registration page to Google or Apple Calendar, automatically populating essential information like course names, locations, and times. By eliminating manual entry, it simplifies schedule management and enhances the registration experience, providing a seamless, user-centered solution for efficient academic planning."
+      "description": "45+ Users. Streamlining class scheduling for University of Washington students with automated calendar integration. This project enables direct export of course details from the UW registration page to Google or Apple Calendar, automatically populating essential information like course names, locations, and times. By eliminating manual entry, it simplifies schedule management and enhances the registration experience, providing a seamless, user-centered solution for efficient academic planning."
   },
   {
       "id": "rmp-extension",
@@ -42,7 +42,7 @@
       "technologies": "JavaScript",
       "resourcesLink": "https://github.com/ayushgupta35/RateMyProfessors/tree/main",
       "presentationLink": "https://chromewebstore.google.com/detail/ratemyprof-assistant-for/ofkeokbllkoiceaekhaljfjbjegahaej?authuser=0&hl=en",
-      "description": "70+ Users. Empowering students with informed course selection through integrated professor ratings. This project brings real-time data from RateMyProfessors into the University of Washington’s MyPlan platform, displaying key metrics like professor ratings, difficulty levels, and 'Would Take Again' percentages. By offering these insights within the course planning tool, it enables students to make data-driven choices and streamlines the registration process, adding valuable context to their academic planning."
+      "description": "80+ Users. Empowering students with informed course selection through integrated professor ratings. This project brings real-time data from RateMyProfessors into the University of Washington’s MyPlan platform, displaying key metrics like professor ratings, difficulty levels, and 'Would Take Again' percentages. By offering these insights within the course planning tool, it enables students to make data-driven choices and streamlines the registration process, adding valuable context to their academic planning."
   },
   {
       "id": "coursekeeper",
@@ -51,7 +51,7 @@
       "technologies": "JavaScript",
       "resourcesLink": "https://github.com/ayushgupta35/RateMyProfessors/tree/main",
       "presentationLink": "https://chromewebstore.google.com/detail/uw-coursekeeper/ipdnhklbnjilkkcdlfneldhmgpbjmimf?authuser=0&hl=en",
-      "description": "40+ Users. Simplifying UW course registration with one-click SLN access. Inspired by my own challenges with finding and entering SLN codes quickly before classes filled up, this tool synchronizes notifications from MyPlan and Notify.UW, providing direct dropdown access to SLN codes on the registration page. By reducing errors and speeding up input, it offers students a seamless, efficient registration experience that eliminates the rush and stress of last-minute code searches."
+      "description": "45+ Users. Simplifying UW course registration with one-click SLN access. Inspired by my own challenges with finding and entering SLN codes quickly before classes filled up, this tool synchronizes notifications from MyPlan and Notify.UW, providing direct dropdown access to SLN codes on the registration page. By reducing errors and speeding up input, it offers students a seamless, efficient registration experience that eliminates the rush and stress of last-minute code searches."
   },
   {
       "id": "chronoVRse",
