@@ -54,6 +54,15 @@
       "description": "60+ Users. Simplifying UW course registration with one-click SLN access. Inspired by my own challenges with finding and entering SLN codes quickly before classes filled up, this tool synchronizes notifications from MyPlan and Notify.UW, providing direct dropdown access to SLN codes on the registration page. By reducing errors and speeding up input, it offers students a seamless, efficient registration experience that eliminates the rush and stress of last-minute code searches."
   },
   {
+      "id": "beacon",
+      "title": "Beacon Disaster Response App Prototype",
+      "image": "assets/beacon.png",
+      "technologies": "Figma",
+      "resourcesLink": "https://www.figma.com/proto/kVlpyNxUsh2iRxSmxmq1em/Proposed-Navigation-Flow?node-id=22-2&p=f&t=QKchPolhtsPyt646-0&scaling=scale-down&content-scaling=fixed&page-id=1%3A2&starting-point-node-id=22%3A2&show-proto-sidebar=1",
+      "presentationLink": "https://docs.google.com/presentation/d/1X3adIotL9xYP9_TRm2hm3vkPWm2d1uptJBcwTWqkx1A/edit#slide=id.g329632339fd_76_0",
+      "description": "1st place Hackathon winner! Beacon is a disaster response app designed to keep communities safe by addressing critical gaps in communication during emergencies. It delivers real-time, hyper-localized updates, offline access to shelters and first aid resources, and Bluetooth communication for when networks fail. With AI-powered assistance and a focus on accessibility, Beacon ensures individuals are informed, prepared, and connected when it matters most."
+  },
+  {
       "id": "chronoVRse",
       "title": "Time Travel VR App Prototype",
       "image": "assets/chronoVRse.png",
