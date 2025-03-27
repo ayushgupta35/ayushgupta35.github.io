@@ -557,3 +557,115 @@ footer {
 .project-link:hover {
   background-color: var(--cta-hover-color);
 }
+
+/* The main container for the folder and previews */
+.folder-container {
+  position: relative;
+  width: 300px;      /* Adjust to your liking */
+  height: 200px;     /* Enough space for the folder images */
+}
+
+/* Stack the two folder images on top of each other */
+.folder-closed,
+.folder-open {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: opacity 0.4s ease;
+}
+
+/* The closed folder is on top (z-index 2) and fully visible by default */
+.folder-closed {
+  z-index: 2;
+}
+
+/* The open folder is beneath (z-index 1) and initially hidden (opacity 0) */
+.folder-open {
+  z-index: 1;
+  opacity: 0;
+}
+
+/* Container for the preview images, placed near the folder's “opening” */
+.project-previews {
+  position: absolute;
+  /* Adjust bottom so it aligns with where you want the previews to emerge from */
+  bottom: 250px;
+  left: 20%;
+  transform: translateX(-50%);
+  /* Set width/height to 0 so we rely on absolutely positioned children */
+  width: 0;
+  height: 0;
+  /* Ensure previews are above the open folder (z-index 3) */
+  z-index: 3;
+}
+
+/* Common styles for each preview image */
+.preview-img {
+  position: absolute;
+  width: 200px; /* Adjust as needed */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  /* Start hidden, scaled down, and shifted down (inside the folder) */
+  opacity: 0;
+  transform: translateY(30px) scale(0) rotate(var(--rotate, 0deg));
+  transform-origin: bottom center;
+}
+
+/* Set custom rotation and initial positions for a natural overlapping effect */
+.preview-img:nth-child(1) {
+  --rotate: -10deg;
+  top: 0;
+  left: -40px; 
+}
+.preview-img:nth-child(2) {
+  --rotate: 0deg;
+  top: -15px;
+  left: -10px;
+}
+.preview-img:nth-child(3) {
+  --rotate: 10deg;
+  top: -30px;
+  left: 20px;
+}
+
+/* Keyframes for the “flying out” animation */
+@keyframes flyOut {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0) rotate(var(--rotate, 0deg));
+  }
+  50% {
+    /* Overshoot: the preview flies past its final position */
+    opacity: 1;
+    transform: translateY(-120px) scale(1.2) rotate(var(--rotate, 0deg));
+  }
+  100% {
+    /* Settle at the final position outside the folder */
+    opacity: 1;
+    transform: translateY(-100px) scale(1) rotate(var(--rotate, 0deg));
+  }
+}
+
+/* Hovering on the folder triggers the open state and starts the animation */
+.folder-container:hover .folder-closed {
+  opacity: 0;        /* Fade out the closed folder */
+}
+.folder-container:hover .folder-open {
+  opacity: 1;        /* Fade in the open folder */
+  z-index: 2;
+}
+
+/* Trigger the flyOut animation on each preview image with staggered delays */
+.folder-container:hover .preview-img:nth-child(1) {
+  animation: flyOut 0.5s forwards;
+  animation-delay: 0.05s;
+}
+.folder-container:hover .preview-img:nth-child(2) {
+  animation: flyOut 0.5s forwards;
+  animation-delay: 0.1s;
+}
+.folder-container:hover .preview-img:nth-child(3) {
+  animation: flyOut 0.5s forwards;
+  animation-delay: 0.15s;
+}
