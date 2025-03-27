@@ -1,10 +1,28 @@
 [
   {
+      "id": "mini-google",
+      "title": "Mini Google Search Engine",
+      "image": "assets/mini-google.png",
+      "technologies": "C, C++, HTML",
+      "resourcesLink": "https://tinyurl.com/43swtj4c",
+      "presentationLink": "",
+      "description": "Built a full-stack mini search engine in C/C++ from scratch that indexes files, stores data on disk, and serves ranked search results via a multithreaded HTTP server with browser support. The project includes a web crawler, indexer, and query processor, implementing data structures like hash tables, linked lists, and heaps to optimize search performance."
+  },
+  {
+    "id": "simple-db",
+    "title": "SimpleDB",
+    "image": "assets/simple-db.png",
+    "technologies": "Java, SQL",
+    "resourcesLink": "https://github.com/ayushgupta35/SimpleDB",
+    "presentationLink": "",
+    "description": "SimpleDB is a fully functional, educational relational database system built from scratch in Java, designed to simulate the core components of modern RDBMS systems. This project showcases a complete backend architecture including query processing, memory management, concurrency control, transaction logging, and more."
+},
+  {
       "id": "grocery-ml",
       "title": "Grocery Store Business ML Model and Basket Analysis",
       "image": "assets/grocery-ml.png",
       "technologies": "Tableau, R, Python",
-      "resourcesLink": "https://tinyurl.com/43swtj4c",
+      "resourcesLink": "https://github.com/ayushgupta35/Mini-Google-Search-Engine/tree/main",
       "presentationLink": "https://tinyurl.com/52zh8z33",
       "description": "Created a machine learning linear regression model that uses data from an Australian grocery store to train the model to predict the total sales, total cost, and quantity of items sold for the store as a whole. Model could be used to also make same predictions for each category and subcategory of items sold."
   },
