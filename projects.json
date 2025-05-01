@@ -73,7 +73,7 @@
   },
   {
       "id": "beacon",
-      "title": "Beacon Disaster Response App Prototype",
+      "title": "Beacon: Disaster Response App Prototype",
       "image": "assets/beacon.png",
       "technologies": "Figma",
       "resourcesLink": "https://www.figma.com/proto/kVlpyNxUsh2iRxSmxmq1em/Proposed-Navigation-Flow?node-id=22-2&p=f&t=QKchPolhtsPyt646-0&scaling=scale-down&content-scaling=fixed&page-id=1%3A2&starting-point-node-id=22%3A2&show-proto-sidebar=1",
@@ -82,7 +82,7 @@
   },
   {
       "id": "chronoVRse",
-      "title": "Time Travel VR App Prototype",
+      "title": "ChronoVRse: Time Travel VR App Prototype",
       "image": "assets/chronoVRse.png",
       "technologies": "Figma",
       "resourcesLink": "https://www.figma.com/file/nzcfhKonQDWTLhKwa6yJNz/Prototype-Patakhas-2.0?type=design&node-id=0-1&mode=design&t=tIDodpWYHdcw9cEZ-0",
@@ -91,12 +91,21 @@
   },
   {
       "id": "headsora",
-      "title": "AI Mental Health App Prototype",
+      "title": "Headsora: AI Mental Health App Prototype",
       "image": "assets/headsora.png",
       "technologies": "Figma",
       "resourcesLink": "https://tinyurl.com/4pue3h85",
       "presentationLink": "https://tinyurl.com/32rrwkrj",
       "description": "AI-powered virtual therapist assistant created for mental health therapy. Using cutting-edge machine learning and natural language processing methods, Headsora provides an easy way for people to communicate with a virtual counselor, boosting emotional well-being and encouraging self-improvement. Goal is to remove obstacles like cost, stigma, and location that prevent people from getting assistance."
+  },
+  {
+      "id": "pocket-market",
+      "title": "PocketMarket: Online Farmer's Market App Prototype",
+      "image": "assets/pocket-market.png",
+      "technologies": "Figma",
+      "resourcesLink": "https://www.figma.com/design/hcRUlq7M7eaXjp80vY9uyi/Pocket-Market?node-id=32-189&t=dtIfygSco8XnqnOv-1",
+      "presentationLink": "https://devpost.com/software/pocket-market?ref_content=contribution-prompt&ref_feature=engagement&ref_medium=email&utm_campaign=contribution-prompt&utm_content=contribution_reminder&utm_medium=email&utm_source=transactional#app-team",
+      "description": "Pocket Market is a virtual street-market experience designed to bring the charm, spontaneity, and human connection of local markets to the digital world. Inspired by the vibrant atmosphere of farmers’ and flea markets, it blends playful UI with practical features like swipeable browsing, vendor storytelling, and live chat. Pocket Market empowers small businesses by removing physical barriers and setup costs, while allowing shoppers to explore, connect, and buy from real people in their local communities. The goal is to make shopping local feel just as fun, personal, and serendipitous online as it is in person."
   },
   {
       "id": "cfb",
