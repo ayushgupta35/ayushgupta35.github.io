@@ -190,7 +190,7 @@ footer,
 .btn-2,
 .btn-bg,
 .wrapper h3 {
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .btn,
@@ -410,15 +410,36 @@ footer {
 }
 
 .skill-item article p:hover {
-  transform: scale(1.25); /* Enlarges only the hovered skill */
+  transform: scale(1.15);
   z-index: 2;
 }
 
-@supports selector(:has(+ *)) {
-  .skill-item article p:hover + p,
-  .skill-item article p:has(+ p:hover) {
-    transform: scale(1.1); /* Enlarges immediate adjacent skills slightly */
-  }
+.project-wrapper {
+  background-color: #fff;                              /* solid white card */
+  border-top: 4px solid var(--btn-bg-color);           /* ← purple accent stripe */
+  border-radius: 20px;                                 /* extra-rounded corners */
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.1),                      /* soft ambient shadow */
+    0 2px 4px rgba(0, 0, 0, 0.08);                     /* subtle depth */
+  margin: 0 0 1rem 0.9rem;                             /* your existing spacing */
+  padding: 1rem;                                       /* inner breathing room */
+  width: 100%;
+  max-width: 30rem;
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-top-color 0.3s ease;                        /* animate the stripe */
+  cursor: pointer;
+}
+
+.project-wrapper:hover {
+  transform: translateY(-5px) scale(1.02);             /* slight lift + zoom */
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.15),
+    0 4px 6px rgba(0, 0, 0, 0.1);
+  border-top-color: var(--cta-hover-color);            /* stripe turns CTA color */
 }
 
 .project-wrapper a {
@@ -427,20 +448,73 @@ footer {
   font-size: 1rem;
 }
 
+/* ——— Upgrade “Click to see more” button on project cards ——— */
 .project-wrapper button {
-  margin-top: 0.7rem;
-  width: 12rem;
-  background-color: var(--btn-bg-light);
+  display: block;                  /* full‑width block for nicer centering */
+  width: max-content;              /* shrink‑to‑fit content */
+  min-width: 14rem;                /* ensure it’s always wide enough */
+  margin: 0.8rem auto 0;           /* center horizontally, keep top gap */
+  padding: 0.75rem 1.5rem;         /* a bit more breathing room */
+  background: linear-gradient(
+    135deg,
+    var(--btn-bg-color) 0%,
+    var(--cta-hover-color) 100%
+  );
+  color: #fafafa;
+  font-size: 0.95rem;
+  letter-spacing: 0.75px;
+  border: none;
 }
 
-.project-wrapper {
-  box-shadow: 1rem 0.5rem 1rem rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  gap: 1rem;
-  margin: 0 0 1rem 0.9rem;
-  padding-top: 0.15rem;
+/* Inherit text/link styling */
+.project-wrapper button a {
+  display: inline-block;
   width: 100%;
-  max-width: 30rem;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+}
+
+.project-wrapper img {
+  transition: transform 0.4s ease;
+}
+
+.project-wrapper:hover img {
+  transform: scale(1.1);
+}
+
+/* Optional gradient overlay */
+.project-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 65%, rgba(0, 0, 0, 0.08) 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.project-wrapper:hover::before {
+  opacity: 1;
+}
+
+.project-wrapper h3,
+.project-wrapper button {
+  position: relative;
+  z-index: 2;
+}
+
+/* ——— Tweak project card titles ——— */
+.project-wrapper h3 {
+  font-size: 1.3rem;                    /* larger, more prominent */
+  font-weight: 600;                     /* semi‑bold for emphasis */
+  color: var(--primary-text-color);     /* matches your theme */
+  margin: 1rem 0 0.5rem;                /* space above and below */
+  line-height: 1.2;                     /* tighter line‑height */
+  letter-spacing: 0.5px;                /* subtle tracking */
+  text-transform: capitalize;           /* nicer casing */
+  text-shadow: 0 1px 2px rgba(0,0,0,0.05); /* gentle lift */
+  transition: color 0.3s ease;          /* smooth hover if desired */
 }
 
 .certifications, .experience {
@@ -468,6 +542,23 @@ footer {
   margin: 0 0 1rem 0.9rem;
 }
 
+.certification-item {
+  background-color: #fff;
+  border-top: 4px solid var(--btn-bg-color);
+  border-radius: 20px;
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.1),
+    0 2px 4px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+  margin: 1rem 0 1rem 0;
+  width: 100%;
+  max-width: 30rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-top-color 0.3s ease;
+  cursor: default;
+}
+
 .certification-item ul, .experience-item ul {
   list-style-type: circle;
 }
@@ -489,15 +580,289 @@ footer {
   }
 }
 
+/* ——— Courses/Certifications cards like project/experience cards ——— */
+.certification-item {
+  background-color: #fff;
+  border-top: 4px solid var(--btn-bg-color);        /* colored accent */
+  border-radius: 20px;
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.1),
+    0 2px 4px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;                                   /* extra breathing room */
+  margin: 1rem 0 1rem 0;                             /* center spacing */
+  width: 100%;
+  max-width: 30rem;
+  position: relative;
+  overflow: hidden;
+  transition: 
+    transform 0.3s ease, 
+    box-shadow 0.3s ease,
+    border-top-color 0.3s ease;
+  cursor: default;
+}
+
+.certification-item:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.15),
+    0 4px 6px rgba(0, 0, 0, 0.1);
+  border-top-color: var(--cta-hover-color);         /* accent on hover */
+}
+
+.certification-item h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0 0 0.75rem;
+  color: var(--primary-text-color);
+}
+
+.certification-item ul {
+  list-style: disc inside;
+  color: var(--secondary-color);
+  line-height: 1.6;
+  padding-left: 1rem;
+}
+
+/* ——— Shared “zoom + gradient” hover for cert & exp cards ——— */
+.certification-item,
+.experience-item {
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-top-color 0.3s ease;
+  cursor: pointer;
+}
+
+/* lift/zoom + stronger shadow + accent‑stripe change */
+.certification-item:hover,
+.experience-item:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.15),
+    0 4px 6px rgba(0, 0, 0, 0.1);
+  border-top-color: var(--cta-hover-color);
+}
+
+/* ——— gradient wash overlay (use ::before so it shows) ——— */
+.certification-item::before,
+.experience-item::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 65%,
+    rgba(0, 0, 0, 0.08) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+.certification-item:hover::before,
+.experience-item:hover::before {
+  opacity: 1;
+}
+
+/* ——— timeline dot for experience (use ::after) ——— */
+.experience-item::after {
+  content: "";
+  position: absolute;
+  width: 1rem; height: 1rem;
+  left: 2rem;               /* nudge it slightly right */
+  top: 0.5rem;
+  background: var(--btn-bg-color);
+  border-radius: 50%;
+  z-index: 2;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 1;
+}
+.experience-item:hover::after {
+  opacity: 0;
+  transform: scale(0.5);
+}
+
+/* ——— Adjust experience dot position ——— */
+.experience-item::before {
+  left: 1.75rem;   /* was calc(2rem - 0.5rem); now shifts dot 0.25rem right */
+  /* other props (top, size, color, transition) stay the same */
+}
+
+/* ——— Gradient overlay + dot hide animation for experience cards ——— */
+.experience-item {
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-top-color 0.3s ease;
+}
+
+/* timeline dot (initial state) */
+.experience-item::before {
+  content: "";
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  left: calc(2rem - 0.5rem);
+  top: 0.5rem;
+  background-color: var(--btn-bg-color);
+  border-radius: 50%;
+  z-index: 2;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 1;
+}
+
+/* hover state: lift/zoom + stronger shadow + accent stripe */
+.experience-item:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.15),
+    0 4px 6px rgba(0, 0, 0, 0.1);
+  border-top-color: var(--cta-hover-color);
+}
+
+/* show gradient overlay on hover */
+.experience-item:hover::after {
+  opacity: 1;
+}
+
+/* hide the dot with a pop‑shrink animation */
+.experience-item:hover::before {
+  opacity: 0;
+  transform: scale(0.5);
+}
+
+/* ——— Experience timeline styling ——— */
+.experience-container {
+  position: relative;
+  padding: 2rem 0;
+  margin: 0 auto;
+  max-width: 40rem;
+}
+
+.experience-container::before {
+  content: "";
+  position: absolute;
+  left: 2rem;           /* position of the vertical line */
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background-color: var(--btn-bg-color);
+}
+
+.experience-item {
+  position: relative;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.1),
+    0 2px 4px rgba(0, 0, 0, 0.08);
+  margin: 2rem auto;
+  /* left padding to make room for the dot */
+  padding: 1rem 1rem 1rem 4rem;
+  /* top border “plugs” into the dot */
+  border-top: 4px solid var(--btn-bg-color);
+}
+
+/* ——— Align dot & let vertical line flow into it ——— */
+.experience-item::before {
+  content: "";
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  /* center the dot over the 2rem‑left line */
+  left: calc(2rem - 0.5rem);
+  top: 0.5rem;                       /* adjust this if you need to nudge vertically */
+  background-color: var(--btn-bg-color);
+  border-radius: 50%;
+  /* remove the white halo so the line runs right through */
+  box-shadow: none;
+  z-index: 2;
+}
+
+/* remove the old horizontal connector */
+.experience-item::after {
+  display: none;
+}
+
+.experience-item h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.experience-item .company {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--secondary-color);
+  margin-bottom: 0.75rem;
+}
+
+.experience-item ul {
+  list-style: disc inside;
+  color: var(--secondary-color);
+  line-height: 1.5;
+  padding-left: 0.5rem;
+}
+
+@media screen and (max-width: 600px) {
+  .experience-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .experience-container::before {
+    left: 1rem;
+  }
+  .experience-item {
+    padding-left: 3rem;
+  }
+  .experience-item::before {
+    left: -0.5rem;
+  }
+}
 
 #project-content {
-  text-align: center;
-  height: 100%;
   background-color: #fff;
-  box-shadow: 1rem 0.5rem 1rem rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  padding: 2rem;
-  margin: 1rem;
+  border-top: 4px solid var(--btn-bg-color);           /* colored accent */
+  border-radius: 20px;                                 /* rounded corners */
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.1),
+    0 2px 4px rgba(0, 0, 0, 0.08);                     /* subtle depth */
+  margin: 4rem auto;                                   /* center horizontally, keep at least 4rem gutters */
+  width: calc(100% - 8rem);
+  max-width: 90rem;
+  box-sizing: border-box;
+  padding: 2rem;                                       /* generous padding */
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-top-color 0.3s ease;
+  cursor: default;
+  text-align: center;
+}
+
+/* gradient wash on hover */
+#project-content::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 65%,
+    rgba(0, 0, 0, 0.08) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+#project-content:hover::before {
+  opacity: 1;
 }
 
 #project-title {
@@ -520,7 +885,8 @@ footer {
   max-height: 25rem;       /* Limit height to a maximum of 25rem */
   object-fit: contain;     /* Maintain aspect ratio and fit within bounds */
   border-radius: 10px;
-  margin: 1rem 0;
+  margin: 1rem auto;
+  display: block;
 }
 
 #project-description {
@@ -529,7 +895,7 @@ footer {
   margin: 1rem 0;       /* Remove left and right margins */
   padding: 0 1rem;      /* Add small padding for better spacing */
   color: var(--secondary-color);
-  text-align: left;
+  text-align: center;
 }
 
 .link-icon {
@@ -556,4 +922,29 @@ footer {
 
 .project-link:hover {
   background-color: var(--cta-hover-color);
+}
+
+#project-content #project-title {
+  font-size: 2.5rem;   /* larger, more impactful title */
+  margin-bottom: 1rem;
+}
+
+#project-content #project-technologies {
+  font-size: 1.6rem;   /* bump up tech list size */
+  margin-bottom: 1.5rem;
+}
+
+#project-content #project-image {
+  max-height: 30rem;   /* allow image to grow */
+}
+
+#project-content #project-description {
+  font-size: 1.4rem;   /* easier to read body text */
+  margin-bottom: 1.5rem;
+}
+
+#project-content .project-link {
+  padding: 1rem 2rem;  /* larger tappable buttons */
+  font-size: 1.1rem;
+  margin: 0.75rem;
 }
