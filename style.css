@@ -762,7 +762,7 @@ footer {
     0 2px 4px rgba(0, 0, 0, 0.08);
   margin: 2rem auto;
   /* left padding to make room for the dot */
-  padding: 1rem 1rem 1rem 4rem;
+  padding: 2rem 1rem 1rem 4rem;
   /* top border “plugs” into the dot */
   border-top: 4px solid var(--btn-bg-color);
 }
@@ -795,10 +795,24 @@ footer {
 }
 
 .experience-item .company {
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--secondary-color);
-  margin-bottom: 0.75rem;
+  position: relative;
+  font-size: 1.3rem;
+  font-weight: 600;
+  padding-right: 4rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.experience-item .company img {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  height: 4.5rem;
+  width: auto;
+}
+
+.experience-item .company + p {
+  margin-top: 0.5rem;
 }
 
 .experience-item ul {
@@ -824,6 +838,20 @@ footer {
   }
 }
 
+/* ——— Override the small “#logo” rule and boost company logo inside experience cards ——— */
+section.experience .experience-item .company {
+  font-size: 1.6rem;       /* bump company name up */
+  padding-right: 6rem;     /* make room for the larger logo */
+}
+
+section.experience .experience-item .company img#logo {
+  position: absolute;
+  top: 0.5rem;            /* nudge into corner */
+  right: 0.55rem;
+  height: 3rem !important; /* override the generic #logo size */
+  width: auto;
+}
+
 #project-content {
   background-color: #fff;
   border-top: 4px solid var(--btn-bg-color);           /* colored accent */
@@ -831,7 +859,7 @@ footer {
   box-shadow:
     0 4px 8px rgba(0, 0, 0, 0.1),
     0 2px 4px rgba(0, 0, 0, 0.08);                     /* subtle depth */
-  margin: 4rem auto;                                   /* center horizontally, keep at least 4rem gutters */
+  margin: 1rem auto 4rem auto;                                   /* center horizontally, keep at least 4rem gutters */
   width: calc(100% - 8rem);
   max-width: 90rem;
   box-sizing: border-box;
@@ -844,25 +872,6 @@ footer {
     border-top-color 0.3s ease;
   cursor: default;
   text-align: center;
-}
-
-/* gradient wash on hover */
-#project-content::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0) 65%,
-    rgba(0, 0, 0, 0.08) 100%
-  );
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  pointer-events: none;
-  z-index: 0;
-}
-#project-content:hover::before {
-  opacity: 1;
 }
 
 #project-title {
@@ -947,4 +956,26 @@ footer {
   padding: 1rem 2rem;  /* larger tappable buttons */
   font-size: 1.1rem;
   margin: 0.75rem;
+}
+
+.back-link {
+  display: block;
+  width: calc(100% - 8rem);   /* same total horizontal padding as #project-content */
+  max-width: 90rem;           /* match your card max-width */
+  margin: 4rem auto 0 auto;/* top, auto-centered horiz, bottom */
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--btn-bg-color);
+  text-decoration: none;
+  text-align: left;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.back-link:hover {
+  color: var(--cta-hover-color);
+  transform: translateX(-2px);
+}
+
+.back-link:active {
+  transform: translateX(0);
 }
