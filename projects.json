@@ -17,6 +17,15 @@
     "presentationLink": "",
     "description": "SimpleDB is a fully functional, educational relational database system built from scratch in Java, designed to simulate the core components of modern RDBMS systems. This project showcases a complete backend architecture including query processing, memory management, concurrency control, transaction logging, and more."
 },
+{
+    "id": "paxos",
+    "title": "Paxos Made Simple",
+    "image": "assets/Paxos.png",
+    "technologies": "Java",
+    "resourcesLink": "",
+    "presentationLink": "",
+    "description": "Built a fully functional implementation of the Paxos consensus protocol from scratch in Java. Demonstrates a real-world fault-tolerant architecture for achieving consensus across unreliable and asynchronous nodes. Includes key distributed systems concepts such as leader election, proposal and acceptor roles, log replication, message retransmission, and crash recovery. Emphasizes robustness in the face of network partitions and node failures, laying the foundation for replicated state machines and consistent system behavior."
+},
   {
       "id": "grocery-ml",
       "title": "Grocery Store Business ML Model and Basket Analysis",
