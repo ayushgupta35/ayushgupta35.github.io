@@ -1,0 +1,1228 @@
+:root {
+  /* Light Theme */
+  --primary-font: "Poppins", sans-serif;
+  --primary-bg-color: #fafafa;
+  --primary-text-color: #333;
+  --secondary-color: #575757;
+  --btn-bg-color: #4B2E83;
+  --cta-hover-color: #4a2e83e5;
+  --btn-bg-light: #dddddd;
+}
+
+body {
+  margin: 0;
+  font-family: var(--primary-font, "Arial, sans-serif");
+  background-color: var(--primary-bg-color);
+  color: var(--primary-text-color);
+}
+
+.theme-btn {
+  position: relative;
+  left: 25vw;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.theme-btn:hover {
+  transform: scale(1.15) rotateZ(15deg);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  cursor: default;
+}
+
+article,
+footer,
+.hero,
+.logo-container,
+.blurb,
+.cta,
+.portfolio-skills,
+.btn-bg,
+.portfolio,
+.skills,
+.experience {
+  display: flex;
+}
+
+.hero,
+.portfolio,
+.skills,
+.experience {
+  flex-direction: column;
+}
+
+.hero,
+.btn-bg,
+.portfolio,
+.skills,
+.experience {
+  align-items: center;
+}
+
+.hero,
+.blurb,
+.wrapper {
+  text-align: center;
+}
+
+article,
+.hero,
+.logo-container,
+.portfolio,
+.skills
+.experience {
+  gap: 1rem;
+}
+
+.hero-pic {
+  width: 9rem;
+  height: 9rem;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+}
+
+.hero-pic:hover {
+  transform: scale(1.1) rotateZ(5deg);
+}
+
+.inner-circle {
+  content: "";
+  position: absolute;
+  top: 0.2rem; /* Adjust border thickness */
+  left: 0.1rem;
+  bottom: 0.1rem;
+  right: 0.1rem;
+  border-radius: 50%;
+  border: 0.18rem solid var(--primary-bg-color);
+  z-index: 1; /* Make sure it is above the image */
+}
+
+.hero-pic img,
+.wrapper img {
+  width: 100%;
+}
+
+.hero-pic img {
+  height: 100%;
+  object-fit: cover;
+  object-position: top 0px right 0rem;
+  transform: scale(1.1);
+}
+
+article p,
+.hero-info h2 {
+  color: var(--secondary-color);
+}
+
+.hero-info h1 {
+  font-size: 1.9rem;
+  font-weight: 500;
+}
+
+.hero-info h2 {
+  font-size: 1.3rem;
+  margin: 0 0 1rem 0;
+  font-weight: 400;
+}
+
+#logo {
+  height: 1.2rem;
+  width: auto;
+}
+
+footer,
+.logo-container,
+.blurb,
+.cta,
+.portfolio-skills,
+.btn-bg {
+  justify-content: center;
+}
+
+.theme-btn,
+.logo-container a,
+.logo-container img {
+  height: 1.8rem;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.blurb {
+  margin: auto;
+  margin-top: 1.2rem;
+  max-width: 58rem;
+  padding: 0 1.5rem;
+  text-align: left;
+}
+
+.blurb ul {
+  list-style-type: circle;
+}
+
+.blurb li {
+  margin-bottom: 0.5rem;
+}
+
+.blurb b {
+  font-weight: 500;
+}
+
+.blurb h2 {
+  width: 30%;
+  font-weight: 300;
+  font-size: 0.9rem;
+}
+
+.cta {
+  margin-top: 1.2rem;
+}
+
+.cta {
+  gap: 2rem;
+}
+.btn-bg {
+  gap: 0.8rem;
+}
+
+.btn,
+.btn-2,
+.btn-bg {
+  border-radius: 15px;
+  border: none;
+}
+
+.btn,
+.btn-2,
+.btn-bg,
+.wrapper h3 {
+  font-weight: 700;
+}
+
+.btn,
+.btn-2,
+.btn-bg,
+.wrapper,
+.project-wrapper {
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    background-color 0.3s ease, color 0.3s ease;
+}
+
+.download-btn:hover {
+  background-color: var(--cta-hover-color);
+}
+
+.theme-btn,
+.download-btn:hover,
+.contact-btn:hover,
+.btn-2:hover {
+  cursor: pointer;
+}
+
+.btn:hover,
+.btn-2:hover {
+  transform: scale(1.08);  /* nav buttons without tilt */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.logo-container a:hover {
+  transform: scale(1.15) rotateZ(8deg);  /* increased tilt for icons */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.btn:active,
+.btn-2:active,
+.project-wrapper:active,
+.logo-container a:active {
+  transform: scale(1);
+}
+
+.contact-btn:hover,
+.download-btn {
+  background-color: var(--btn-bg-color);
+  color: #fafafa;
+}
+
+.contact-btn:hover {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-2:hover,
+.active-btn {
+  background-color: white;
+  color: var(--btn-bg-color);
+}
+
+.btn,
+.btn-2 {
+  height: 3rem;
+}
+
+.btn {
+  width: 9rem;
+}
+
+.btn-2 {
+  min-width: 7.7rem;
+}
+
+.download-btn {
+  transition: background-color 0.3s ease;
+}
+
+.portfolio-skills {
+  height: 4rem;
+  margin-top: 1.5rem;
+  position: relative;
+}
+
+.btn-bg {
+  width: 36rem;
+}
+
+article p,
+.btn-bg {
+  background-color: var(--btn-bg-light);
+}
+
+.hero,
+.portfolio,
+.skills
+.experience {
+  margin-top: 2rem;
+}
+
+.skills {
+  display: none;
+}
+
+.experience {
+  display: none;
+}
+
+article,
+.wrapper h3 {
+  margin-bottom: 1.5rem;
+}
+
+article {
+  flex-wrap: wrap;
+}
+
+article p {
+  border-radius: 15px;
+  flex-grow: 20;
+  padding: 1rem;
+}
+
+footer {
+  margin: 3rem 0;
+}
+
+@media screen and (min-width: 900px) {
+  .skills,
+  .experience,
+  .portfolio {
+    flex-direction: row;
+    min-width: 65rem;
+    max-width: 75rem;
+  }
+  .skills, .experience {
+    margin: 2rem auto 0;
+  }
+  .portfolio {
+    margin: 3rem auto;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .wrapper {
+    width: calc(20%);
+    flex: none;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .portfolio-skills .btn-bg {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero {
+    margin: 2rem;
+  }
+
+  .portfolio-skills {
+    height: auto; /* Adjust height to fit content */
+    padding: 10px;
+  }
+
+  .skills {
+    margin-top: 3rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
+
+  .skills article p {
+    font-size: 0.8rem;
+  }
+
+  .portfolio img {
+    max-width: 100%;        /* Allow full width within the container */
+    max-height: 15rem;      /* Adjust max-height for smaller screens */
+  }
+  
+  .project-wrapper h3 {
+    font-size: 1rem; /* Reduce font size for title */
+  }
+
+  .portfolio {
+    margin: 1.5rem;
+  }
+}
+
+.portfolio img {
+  width: auto;               /* Allow width to adjust automatically */
+  height: auto;              /* Allow height to adjust automatically */
+  max-width: 90%;            /* Prevent width from exceeding 90% of the container */
+  max-height: 17rem;         /* Set maximum height to 17rem */
+  object-fit: contain;       /* Maintain aspect ratio and fit within the bounds */
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.7rem; /* Adjust gap as needed */
+  justify-content: center;
+}
+
+.skill-item {
+  width: calc(50% - 1rem); /* Each column takes up half the container width */
+}
+
+.skill-item h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.skill-item article p {
+  text-align: center;
+  max-width: fit-content;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: inline-block;
+  margin-right: 0.5rem;
+  font-weight: 500;
+  box-shadow: 0 0 0.3rem rgba(0, 0, 0, 0.1);
+}
+
+.skill-item article p:hover {
+  transform: scale(1.25) rotateZ(1deg);  /* reduced tilt for skills */
+  z-index: 2;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.project-wrapper {
+  background-color: #fff;                              /* solid white card */
+  border-top: 4px solid var(--btn-bg-color);           /* ← purple accent stripe */
+  border-radius: 20px;                                 /* extra-rounded corners */
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.1),                      /* soft ambient shadow */
+    0 2px 4px rgba(0, 0, 0, 0.08);                     /* subtle depth */
+  margin: 0 0 1rem 0.9rem;                             /* your existing spacing */
+  padding: 1rem;                                       /* inner breathing room */
+  width: 100%;
+  max-width: 30rem;
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    box-shadow 0.4s ease,
+    border-top-color 0.3s ease;                        /* animate the stripe */
+  cursor: pointer;
+}
+
+.project-wrapper:hover {
+  transform: translateY(-8px) scale(1.06) rotateX(2deg);  /* physically enlarges the card */
+  box-shadow:
+    0 12px 25px rgba(0, 0, 0, 0.12),
+    0 6px 12px rgba(0, 0, 0, 0.08);
+  border-top-color: var(--cta-hover-color);
+}
+
+.project-wrapper a {
+  text-decoration: none;
+  color: var(--primary-text-color);
+  font-size: 1rem;
+}
+
+/* ——— Upgrade “Click to see more” button on project cards ——— */
+.project-wrapper button {
+  display: block;                  /* full‑width block for nicer centering */
+  width: max-content;              /* shrink‑to‑fit content */
+  min-width: 14rem;                /* ensure it’s always wide enough */
+  margin: 0.8rem auto 0;           /* center horizontally, keep top gap */
+  padding: 0.75rem 1.5rem;         /* a bit more breathing room */
+  background: linear-gradient(
+    135deg,
+    var(--btn-bg-color) 0%,
+    var(--cta-hover-color) 100%
+  );
+  color: #fafafa;
+  font-size: 0.95rem;
+  letter-spacing: 0.75px;
+  border: none;
+}
+
+/* Inherit text/link styling */
+.project-wrapper button a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+}
+
+.project-wrapper img {
+  transition: transform 0.6s ease 0.1s;  /* delayed zoom for images */
+}
+
+.project-wrapper:hover img {
+  transform: scale(1.1);
+}
+
+/* Optional gradient overlay */
+.project-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 65%, rgba(0, 0, 0, 0.08) 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.project-wrapper:hover::before {
+  opacity: 1;
+}
+
+.project-wrapper h3,
+.project-wrapper button {
+  position: relative;
+  z-index: 2;
+}
+
+/* ——— Tweak project card titles ——— */
+.project-wrapper h3 {
+  font-size: 1.3rem;                    /* larger, more prominent */
+  font-weight: 600;                     /* semi‑bold for emphasis */
+  color: var(--primary-text-color);     /* matches your theme */
+  margin: 1rem 0 0.5rem;                /* space above and below */
+  line-height: 1.2;                     /* tighter line‑height */
+  letter-spacing: 0.5px;                /* subtle tracking */
+  text-transform: capitalize;           /* nicer casing */
+  text-shadow: 0 1px 2px rgba(0,0,0,0.05); /* gentle lift */
+  transition: color 0.3s ease;          /* smooth hover if desired */
+}
+
+.certifications, .experience {
+  display: none;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2rem;
+  max-width: 50rem;
+}
+
+.certifications-container, .experience-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem; /* Adjust gap between columns as needed */
+}
+
+.certification-item, .experience-item {
+  width: 30rem;
+  flex-grow: 1;
+  box-sizing: border-box;
+  box-shadow: 1rem 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  border-radius: 10px;
+  gap: 1rem;
+  margin: 0 0 1rem 0.9rem;
+}
+
+.certification-item {
+  background-color: #fff;
+  border-top: 4px solid var(--btn-bg-color);
+  border-radius: 20px;
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.1),
+    0 2px 4px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+  margin: 1rem 0 1rem 0;
+  width: 100%;
+  max-width: 30rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-top-color 0.3s ease;
+  cursor: default;
+}
+
+.certification-item ul, .experience-item ul {
+  list-style-type: circle;
+}
+
+.experience h3 {
+  font-size: 1.2rem;
+}
+
+.company {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+@media screen and (max-width: 600px) {
+  .certification-item, .experience-item, .skill-item {
+    width: 100%; /* Stacks items on smaller screens */
+  }
+}
+
+/* ——— Courses/Certifications cards like project/experience cards ——— */
+.certification-item {
+  background-color: #fff;
+  border-top: 4px solid var(--btn-bg-color);        /* colored accent */
+  border-radius: 20px;
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.1),
+    0 2px 4px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;                                   /* extra breathing room */
+  margin: 1rem 0 1rem 0;                             /* center spacing */
+  width: 100%;
+  max-width: 30rem;
+  position: relative;
+  overflow: hidden;
+  transition: 
+    transform 0.3s ease, 
+    box-shadow 0.3s ease,
+    border-top-color 0.3s ease;
+  cursor: default;
+}
+
+.certification-item:hover {
+  transform: translateY(-8px) scale(1.06) rotateY(-2deg);  /* physically enlarges the card */
+  box-shadow:
+    0 12px 25px rgba(0, 0, 0, 0.12),
+    0 6px 12px rgba(0, 0, 0, 0.08);
+  border-top-color: var(--cta-hover-color);
+}
+
+.certification-item h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0 0 0.75rem;
+  color: var(--primary-text-color);
+}
+
+.certification-item ul {
+  list-style: disc inside;
+  color: var(--secondary-color);
+  line-height: 1.6;
+  padding-left: 1rem;
+}
+
+/* ——— Shared “zoom + gradient” hover for cert & exp cards ——— */
+.certification-item,
+.experience-item {
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    box-shadow 0.4s ease,
+    border-top-color 0.3s ease;
+  cursor: pointer;
+}
+
+/* lift/zoom + stronger shadow + accent‑stripe change */
+.certification-item:hover,
+.experience-item:hover {
+  transform: translateY(-8px) scale(1.06) rotateY(2deg);  /* physically enlarges the cards */
+  box-shadow:
+    0 12px 25px rgba(0, 0, 0, 0.12),
+    0 6px 12px rgba(0, 0, 0, 0.08);
+  border-top-color: var(--cta-hover-color);
+}
+
+/* ——— gradient wash overlay (use ::before so it shows) ——— */
+.certification-item::before,
+.experience-item::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 65%,
+    rgba(0, 0, 0, 0.08) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+.certification-item:hover::before,
+.experience-item:hover::before {
+  opacity: 1;
+}
+
+/* ——— timeline dot for experience (use ::after) ——— */
+.experience-item::after {
+  content: "";
+  position: absolute;
+  width: 1rem; height: 1rem;
+  left: 2rem;               /* nudge it slightly right */
+  top: 0.5rem;
+  background: var(--btn-bg-color);
+  border-radius: 50%;
+  z-index: 2;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 1;
+}
+.experience-item:hover::after {
+  opacity: 0;
+  transform: scale(0.5);
+}
+
+/* ——— Adjust experience dot position ——— */
+.experience-item::before {
+  left: 1.75rem;   /* was calc(2rem - 0.5rem); now shifts dot 0.25rem right */
+  /* other props (top, size, color, transition) stay the same */
+}
+
+/* ——— Gradient overlay + dot hide animation for experience cards ——— */
+.experience-item {
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-top-color 0.3s ease;
+}
+
+/* timeline dot (initial state) */
+.experience-item::before {
+  content: "";
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  left: calc(2rem - 0.5rem);
+  top: 0.5rem;
+  background-color: var(--btn-bg-color);
+  border-radius: 50%;
+  z-index: 2;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 1;
+}
+
+/* hover state: lift/zoom + stronger shadow + accent stripe */
+.experience-item:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.15),
+    0 4px 6px rgba(0, 0, 0, 0.1);
+  border-top-color: var(--cta-hover-color);
+}
+
+/* show gradient overlay on hover */
+.experience-item:hover::after {
+  opacity: 1;
+}
+
+/* hide the dot with a pop‑shrink animation */
+.experience-item:hover::before {
+  opacity: 0;
+  transform: scale(0.5);
+}
+
+/* ——— Experience timeline styling ——— */
+.experience-container {
+  position: relative;
+  padding: 2rem 0;
+  margin: 0 auto;
+  max-width: 40rem;
+}
+
+.experience-container::before {
+  content: "";
+  position: absolute;
+  left: 2rem;           /* position of the vertical line */
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background-color: var(--btn-bg-color);
+}
+
+.experience-item {
+  position: relative;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.1),
+    0 2px 4px rgba(0, 0, 0, 0.08);
+  margin: 2rem auto;
+  /* left padding to make room for the dot */
+  padding: 2rem 1rem 1rem 4rem;
+  /* top border “plugs” into the dot */
+  border-top: 4px solid var(--btn-bg-color);
+}
+
+/* ——— Align dot & let vertical line flow into it ——— */
+.experience-item::before {
+  content: "";
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  /* center the dot over the 2rem‑left line */
+  left: calc(2rem - 0.5rem);
+  top: 0.5rem;                       /* adjust this if you need to nudge vertically */
+  background-color: var(--btn-bg-color);
+  border-radius: 50%;
+  /* remove the white halo so the line runs right through */
+  box-shadow: none;
+  z-index: 2;
+}
+
+/* remove the old horizontal connector */
+.experience-item::after {
+  display: none;
+}
+
+.experience-item h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.experience-item .company {
+  position: relative;
+  font-size: 1.3rem;
+  font-weight: 600;
+  padding-right: 4rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.experience-item .company img {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  height: 4.5rem;
+  width: auto;
+  transition: transform 0.6s ease 0.1s;  /* delayed zoom for company logos */
+}
+
+.experience-item:hover .company img {
+  transform: scale(1.1);
+}
+
+.experience-item .company + p {
+  margin-top: 0.5rem;
+}
+
+.experience-item ul {
+  list-style: disc inside;
+  color: var(--secondary-color);
+  line-height: 1.5;
+  padding-left: 0.5rem;
+}
+
+@media screen and (max-width: 600px) {
+  .experience-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .experience-container::before {
+    left: 1rem;
+  }
+  .experience-item {
+    padding-left: 3rem;
+  }
+  .experience-item::before {
+    left: -0.5rem;
+  }
+}
+
+/* ——— Override the small “#logo” rule and boost company logo inside experience cards ——— */
+section.experience .experience-item .company {
+  font-size: 1.6rem;       /* bump company name up */
+  padding-right: 6rem;     /* make room for the larger logo */
+}
+
+section.experience .experience-item .company img#logo {
+  position: absolute;
+  top: 0.5rem;            /* nudge into corner */
+  right: 0.55rem;
+  height: 3rem !important; /* override the generic #logo size */
+  width: auto;
+  transition: transform 0.6s ease 0.1s;  /* delayed zoom for company logos */
+}
+
+section.experience .experience-item:hover .company img#logo {
+  transform: scale(1.1);
+}
+
+#project-content {
+  background-color: #fff;
+  border-top: 4px solid var(--btn-bg-color);           /* colored accent */
+  border-radius: 20px;                                 /* rounded corners */
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.1),
+    0 2px 4px rgba(0, 0, 0, 0.08);                     /* subtle depth */
+  margin: 1rem auto 4rem auto;                                   /* center horizontally, keep at least 4rem gutters */
+  width: calc(100% - 8rem);
+  max-width: 90rem;
+  box-sizing: border-box;
+  padding: 2rem;                                       /* generous padding */
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-top-color 0.3s ease;
+  cursor: default;
+  text-align: center;
+}
+
+#project-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--primary-text-color);
+  margin-bottom: 0.5rem;
+}
+
+#project-technologies {
+  color: var(--secondary-color);
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+#project-image {
+  width: auto;             /* Allow width to adjust automatically */
+  height: auto;            /* Allow height to adjust automatically */
+  max-width: 90%;         /* Limit width to the container's width */
+  max-height: 25rem;       /* Limit height to a maximum of 25rem */
+  object-fit: contain;     /* Maintain aspect ratio and fit within bounds */
+  border-radius: 10px;
+  margin: 1rem auto;
+  display: block;
+}
+
+#project-description {
+  font-size: 1.2rem;    /* Adjust font size for readability */
+  line-height: 1.5;
+  margin: 1rem 0;       /* Remove left and right margins */
+  padding: 0 1rem;      /* Add small padding for better spacing */
+  color: var(--secondary-color);
+  text-align: center;
+}
+
+.link-icon {
+  width: 20px;       /* Adjust size as needed */
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 8px; /* Spacing between icon and text */
+  filter: invert(1);
+  margin-top: -5px;
+}
+
+.project-link {
+  display: inline-block;
+  margin: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  background-color: var(--btn-bg-color);
+  text-decoration: none;
+  border-radius: 15px;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.project-link:hover {
+  background-color: var(--cta-hover-color);
+  transform: translateY(-3px) scale(1.05) rotateZ(-1deg);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+#project-content #project-title {
+  font-size: 2.5rem;   /* larger, more impactful title */
+  margin-bottom: 1rem;
+}
+
+#project-content #project-technologies {
+  font-size: 1.6rem;   /* bump up tech list size */
+  margin-bottom: 1.5rem;
+}
+
+#project-content #project-image {
+  max-height: 30rem;   /* allow image to grow */
+}
+
+#project-content #project-description {
+  font-size: 1.4rem;   /* easier to read body text */
+  margin-bottom: 1.5rem;
+}
+
+#project-content .project-link {
+  padding: 1rem 2rem;  /* larger tappable buttons */
+  font-size: 1.1rem;
+  margin: 0.75rem;
+}
+
+.back-link {
+  display: block;
+  width: calc(100% - 8rem);   /* same total horizontal padding as #project-content */
+  max-width: 90rem;           /* match your card max-width */
+  margin: 4rem auto 0 auto;/* top, auto-centered horiz, bottom */
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--btn-bg-color);
+  text-decoration: none;
+  text-align: left;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.back-link:hover {
+  color: var(--cta-hover-color);
+  transform: translateX(-2px);
+}
+
+.back-link:active {
+  transform: translateX(0);
+}
+
+/* ===== NEW ANIMATIONS & TRANSITIONS ===== */
+
+/* Smooth section transitions */
+.sections-container {
+  position: relative;
+  min-height: 60vh;
+  overflow: hidden;
+  perspective: 1000px;  /* Add 3D perspective for tilt effects */
+}
+
+.section-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+.section-wrapper.active {
+  position: relative;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+
+.section-wrapper.hidden {
+  opacity: 0;
+  transform: translateY(-20px);
+  pointer-events: none;
+}
+
+/* Page load animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Apply animations to page elements */
+.hero {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.hero-pic {
+  animation: scaleIn 1s ease-out 0.2s both;
+}
+
+.hero-info {
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.logo-container {
+  animation: fadeInUp 0.8s ease-out 0.6s both;
+}
+
+.blurb {
+  animation: fadeInUp 0.8s ease-out 0.3s both;
+}
+
+.cta {
+  animation: fadeInUp 0.8s ease-out 0.5s both;
+}
+
+.portfolio-skills {
+  animation: fadeInUp 0.8s ease-out 0.7s both;
+}
+
+/* Stagger project card animations */
+.project-wrapper {
+  animation: fadeInUp 0.8s ease-out both;
+}
+
+.project-wrapper:nth-child(1) { animation-delay: 0.1s; }
+.project-wrapper:nth-child(2) { animation-delay: 0.2s; }
+.project-wrapper:nth-child(3) { animation-delay: 0.3s; }
+.project-wrapper:nth-child(4) { animation-delay: 0.4s; }
+.project-wrapper:nth-child(5) { animation-delay: 0.5s; }
+.project-wrapper:nth-child(6) { animation-delay: 0.6s; }
+
+/* Stagger skill item animations */
+.skill-item {
+  animation: fadeInLeft 0.8s ease-out both;
+}
+
+.skill-item:nth-child(1) { animation-delay: 0.1s; }
+.skill-item:nth-child(2) { animation-delay: 0.2s; }
+.skill-item:nth-child(3) { animation-delay: 0.3s; }
+.skill-item:nth-child(4) { animation-delay: 0.4s; }
+
+/* Stagger experience timeline animations */
+.experience-item {
+  animation: fadeInRight 0.8s ease-out both;
+}
+
+.experience-item:nth-child(1) { animation-delay: 0.1s; }
+.experience-item:nth-child(2) { animation-delay: 0.3s; }
+.experience-item:nth-child(3) { animation-delay: 0.5s; }
+.experience-item:nth-child(4) { animation-delay: 0.7s; }
+
+/* Stagger certification card animations */
+.certification-item {
+  animation: fadeInUp 0.8s ease-out both;
+}
+
+.certification-item:nth-child(1) { animation-delay: 0.1s; }
+.certification-item:nth-child(2) { animation-delay: 0.2s; }
+.certification-item:nth-child(3) { animation-delay: 0.3s; }
+.certification-item:nth-child(4) { animation-delay: 0.4s; }
+
+/* Enhanced button animations */
+.btn-2 {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-2::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn-2:hover::before {
+  left: 100%;
+}
+
+/* Smooth theme transition */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Footer animation */
+footer {
+  animation: fadeInUp 0.8s ease-out 0.9s both;
+}
+
+/* Project detail page animations */
+#project-content {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.back-link {
+  animation: fadeInLeft 0.8s ease-out 0.2s both;
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Add 3D perspective to main sections for enhanced tilt effects */
+.portfolio,
+.skills,
+.experience,
+.certifications {
+  perspective: 1200px;
+}
+
+.portfolio .project-wrapper,
+.skills .skill-item,
+.experience .experience-item,
+.certifications .certification-item {
+  transform-style: preserve-3d;
+}
