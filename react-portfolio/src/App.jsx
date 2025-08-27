@@ -6,7 +6,6 @@ import Home from './pages/Home';
 import ProjectDetail from './components/ProjectDetail';
 import AdminDashboard from './pages/AdminDashboard';
 import AdminLogin from './pages/AdminLogin';
-import SeedDataPage from './components/SeedDataPage';
 import './styles/style.css';
 
 function App() {
@@ -26,7 +25,6 @@ function App() {
                 </ProtectedRoute>
               } 
             />
-            <Route path="/seed" element={<SeedDataPage />} />
           </Routes>
         </div>
       </Router>
