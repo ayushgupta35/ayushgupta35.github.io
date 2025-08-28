@@ -24,10 +24,15 @@
   "author": "Ayush Gupta",
   "license": "MIT",
   "dependencies": {
+    "@react-three/drei": "^10.7.4",
+    "@react-three/fiber": "^9.3.0",
     "firebase": "^10.14.1",
+    "framer-motion": "^12.23.12",
+    "lottie-react": "^2.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.8.1"
+    "react-router-dom": "^6.8.1",
+    "three": "^0.160.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",

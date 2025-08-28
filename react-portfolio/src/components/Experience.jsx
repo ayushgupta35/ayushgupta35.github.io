@@ -8,7 +8,6 @@ const Experience = () => {
     const fetchExperience = async () => {
       try {
         const experienceData = await experienceService.getExperience();
-        console.log('Experience data fetched:', experienceData);
         setExperience(experienceData || []);
       } catch (error) {
         console.error('Error fetching experience:', error);

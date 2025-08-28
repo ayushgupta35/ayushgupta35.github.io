@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Eye } from 'lucide-react';
 import { projectsService } from '../firebase/services';
 
 const Portfolio = () => {
@@ -10,7 +11,6 @@ const Portfolio = () => {
     const fetchProjects = async () => {
       try {
         const projectsData = await projectsService.getProjects();
-        console.log('Projects data fetched:', projectsData);
         if (Array.isArray(projectsData)) {
           setProjects(projectsData);
         }
@@ -29,15 +29,27 @@ const Portfolio = () => {
   return (
     <section className="portfolio" id="portfolio">
       {projects.map((project) => (
-        <div key={project.id} className="wrapper project-wrapper">
+        <div key={project.id} className="wrapper project-wrapper" data-project-id={project.id}>
           <img src={project.image} alt={project.id} />
           <h3>
             {project.title}
             <br />
-            <button className="btn">
-              <span onClick={() => handleProjectClick(project.id)} style={{ cursor: 'pointer' }}>
-                Click to see more -&gt;
-              </span>
+            {/* Technology bubbles */}
+            {project.technologies && (
+              <div className="project-technologies">
+                {project.technologies.split(',').map((tech, index) => (
+                  <span key={index} className="tech-bubble">
+                    {tech.trim()}
+                  </span>
+                ))}
+              </div>
+            )}
+            <button 
+              className="btn view-project-btn"
+              onClick={() => handleProjectClick(project.id)}
+            >
+              <Eye size={18} />
+              View Project
             </button>
           </h3>
         </div>

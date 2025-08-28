@@ -33,12 +33,9 @@ const CertificationsManager = () => {
   const fetchCertifications = async () => {
     try {
       const certificationsData = await certificationsService.getCertifications();
-      console.log('Certifications data fetched (raw):', certificationsData);
-      console.log('Certifications data type:', typeof certificationsData, 'isArray:', Array.isArray(certificationsData));
       
       // Certifications service now returns array format
       const finalCertifications = Array.isArray(certificationsData) ? certificationsData : [];
-      console.log('Final certifications array:', finalCertifications);
       setCertifications(finalCertifications);
     } catch (error) {
       console.error('Error fetching certifications:', error);
@@ -117,9 +114,6 @@ const CertificationsManager = () => {
       const newCertifications = [...certifications];
       [newCertifications[index], newCertifications[index - 1]] = [newCertifications[index - 1], newCertifications[index]];
       
-      console.log('Reordering certifications - before:', certifications);
-      console.log('Reordering certifications - after:', newCertifications);
-      
       // Store as array format to maintain order
       await certificationsService.updateCertifications(newCertifications);
       setCertifications(newCertifications);
@@ -136,9 +130,6 @@ const CertificationsManager = () => {
     try {
       const newCertifications = [...certifications];
       [newCertifications[index], newCertifications[index + 1]] = [newCertifications[index + 1], newCertifications[index]];
-      
-      console.log('Reordering certifications - before:', certifications);
-      console.log('Reordering certifications - after:', newCertifications);
       
       // Store as array format to maintain order
       await certificationsService.updateCertifications(newCertifications);

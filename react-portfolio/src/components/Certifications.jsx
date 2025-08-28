@@ -8,7 +8,6 @@ const Certifications = () => {
     const fetchCertifications = async () => {
       try {
         const certificationsData = await certificationsService.getCertifications();
-        console.log('Certifications data fetched:', certificationsData);
         
         // Keep as array format to maintain order
         if (Array.isArray(certificationsData)) {

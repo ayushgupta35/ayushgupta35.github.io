@@ -79,22 +79,10 @@ const Hero = () => {
         )}
 
         {bulletPoints && bulletPoints.length > 0 && (
-          <ul style={{
-            listStyle: 'none',
-            padding: 0,
-            margin: '1.5rem 0',
-            maxWidth: '700px',
-            textAlign: 'left'
-          }}>
+          <ul className="hero-bullet-list">
             {bulletPoints.filter(point => point && point.trim()).map((point, index) => (
-              <li key={index} style={{
-                margin: '0.8rem 0',
-                fontSize: '1rem',
-                lineHeight: '1.5',
-                color: '#555',
-                textAlign: 'left'
-              }}>
-                {point}
+              <li key={index} className="hero-bullet-item">
+                <span className="bullet-bubble">{point}</span>
               </li>
             ))}
           </ul>

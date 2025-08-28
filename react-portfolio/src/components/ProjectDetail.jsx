@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import { Github, ExternalLink, Figma, Chrome } from 'lucide-react';
 import { projectsService } from '../firebase/services';
 
 const ProjectDetail = () => {
@@ -35,7 +36,75 @@ const ProjectDetail = () => {
   }, [projectId]);
 
   const handleBackClick = () => {
-    navigate(-1); // Go back in browser history
+    // Navigate to home page
+    navigate('/');
+    
+    // Scroll to the specific project after a short delay to ensure the page loads
+    setTimeout(() => {
+      const projectElement = document.querySelector(`[data-project-id="${projectId}"]`);
+      if (projectElement) {
+        projectElement.scrollIntoView({ 
+          behavior: 'smooth', 
+          block: 'center' 
+        });
+      } else {
+        // Fallback: scroll to portfolio section
+        const portfolioSection = document.getElementById('portfolio');
+        if (portfolioSection) {
+          portfolioSection.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'start' 
+          });
+        }
+      }
+    }, 100);
+  };
+
+  const isGitHubLink = (url) => {
+    return url && url.toLowerCase().includes('github');
+  };
+
+  const isFigmaLink = (url) => {
+    return url && url.toLowerCase().includes('figma');
+  };
+
+  const isChromeStoreLink = (url) => {
+    return url && (url.toLowerCase().includes('chrome.google.com/webstore') || 
+                   url.toLowerCase().includes('chromewebstore.google.com'));
+  };
+
+  const renderLinkButton = (url, label) => {
+    const isGitHub = isGitHubLink(url);
+    const isFigma = isFigmaLink(url);
+    const isChromeStore = isChromeStoreLink(url);
+    
+    let linkClass = 'project-link';
+    let icon = <ExternalLink size={18} />;
+    
+    if (isGitHub) {
+      linkClass += ' github-link';
+      icon = <Github size={18} />;
+    } else if (isFigma) {
+      linkClass += ' figma-link';
+      icon = <Figma size={18} />;
+    } else if (isChromeStore) {
+      linkClass += ' chrome-store-link';
+      icon = <Chrome size={18} />;
+    } else {
+      linkClass += ' external-link';
+    }
+    
+    return (
+      <a
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={linkClass}
+      >
+        {icon}
+        {label}
+      </a>
+    );
   };
 
   if (error || !project) {
@@ -58,25 +127,19 @@ const ProjectDetail = () => {
         <img id="project-image" src={project.image} alt={project.title} />
         <p id="project-description">{project.description}</p>
         <div id="project-links">
-          {project.resourcesLink && (
-            <a
-              href={project.resourcesLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="project-link"
-            >
-              Project Resources
-            </a>
+          {project.resourcesLink && renderLinkButton(
+            project.resourcesLink, 
+            isGitHubLink(project.resourcesLink) ? 'View on GitHub' : 
+            isFigmaLink(project.resourcesLink) ? 'View on Figma' : 
+            isChromeStoreLink(project.resourcesLink) ? 'View in Chrome Store' :
+            'Project Resources'
           )}
-          {project.presentationLink && (
-            <a
-              href={project.presentationLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="project-link"
-            >
-              Link
-            </a>
+          {project.presentationLink && renderLinkButton(
+            project.presentationLink,
+            isGitHubLink(project.presentationLink) ? 'View on GitHub' :
+            isFigmaLink(project.presentationLink) ? 'View on Figma' :
+            isChromeStoreLink(project.presentationLink) ? 'View in Chrome Store' :
+            'View Project'
           )}
         </div>
       </div>

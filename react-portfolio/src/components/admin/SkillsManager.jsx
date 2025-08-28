@@ -33,12 +33,9 @@ const SkillsManager = () => {
   const fetchSkills = async () => {
     try {
       const skillsData = await skillsService.getSkills();
-      console.log('Skills data fetched (raw):', skillsData);
-      console.log('Skills data type:', typeof skillsData, 'isArray:', Array.isArray(skillsData));
       
       // Skills service now returns array format
       const finalSkills = Array.isArray(skillsData) ? skillsData : [];
-      console.log('Final skills array:', finalSkills);
       setSkills(finalSkills);
     } catch (error) {
       console.error('Error fetching skills:', error);
@@ -117,9 +114,6 @@ const SkillsManager = () => {
       const newSkills = [...skills];
       [newSkills[index], newSkills[index - 1]] = [newSkills[index - 1], newSkills[index]];
       
-      console.log('Reordering skills - before:', skills);
-      console.log('Reordering skills - after:', newSkills);
-      
       // Store as array format to maintain order
       await skillsService.updateSkills(newSkills);
       setSkills(newSkills);
@@ -136,9 +130,6 @@ const SkillsManager = () => {
     try {
       const newSkills = [...skills];
       [newSkills[index], newSkills[index + 1]] = [newSkills[index + 1], newSkills[index]];
-      
-      console.log('Reordering skills - before:', skills);
-      console.log('Reordering skills - after:', newSkills);
       
       // Store as array format to maintain order
       await skillsService.updateSkills(newSkills);

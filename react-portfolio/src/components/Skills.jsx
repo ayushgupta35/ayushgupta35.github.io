@@ -8,7 +8,6 @@ const Skills = () => {
     const fetchSkills = async () => {
       try {
         const skillsData = await skillsService.getSkills();
-        console.log('Skills data fetched:', skillsData);
         
         // Keep as array format to maintain order
         if (Array.isArray(skillsData)) {
