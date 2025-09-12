@@ -8,9 +8,13 @@ import Skills from '../components/Skills';
 import Experience from '../components/Experience';
 import Certifications from '../components/Certifications';
 import Footer from '../components/Footer';
+import useVisitorTracking from '../hooks/useVisitorTracking';
 
 const Home = () => {
   const [activeSection, setActiveSection] = useState('portfolio');
+  
+  // Track visitor for analytics
+  useVisitorTracking();
 
   return (
     <>

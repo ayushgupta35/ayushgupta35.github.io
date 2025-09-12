@@ -6,6 +6,7 @@ import SkillsManager from '../components/admin/SkillsManager';
 import ExperienceManager from '../components/admin/ExperienceManager';
 import CertificationsManager from '../components/admin/CertificationsManager';
 import HeroManager from '../components/admin/HeroManager';
+import VisitorAnalytics from '../components/admin/VisitorAnalytics';
 
 const AdminDashboard = () => {
   const [activeTab, setActiveTab] = useState('hero');
@@ -24,7 +25,8 @@ const AdminDashboard = () => {
     { id: 'projects', label: 'Projects', icon: '🚀' },
     { id: 'skills', label: 'Skills', icon: '💡' },
     { id: 'experience', label: 'Experience', icon: '💼' },
-    { id: 'certifications', label: 'Certifications', icon: '🎓' }
+    { id: 'certifications', label: 'Certifications', icon: '🎓' },
+    { id: 'analytics', label: 'Analytics', icon: '📊' }
   ];
 
   const renderTabContent = () => {
@@ -57,6 +59,12 @@ const AdminDashboard = () => {
         return (
           <ErrorBoundary>
             <CertificationsManager />
+          </ErrorBoundary>
+        );
+      case 'analytics':
+        return (
+          <ErrorBoundary>
+            <VisitorAnalytics />
           </ErrorBoundary>
         );
       default:

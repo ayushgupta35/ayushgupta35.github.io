@@ -1,6 +1,100 @@
 import { database } from './config';
 import { ref, get, set, push, remove, update } from 'firebase/database';
 
+// Visitor tracking service
+export const visitorService = {
+  // Record a unique visit
+  async recordVisit() {
+    try {
+      // Generate a unique visitor ID if not exists
+      let visitorId = localStorage.getItem('portfolio_visitor_id');
+      
+      if (!visitorId) {
+        visitorId = `visitor_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+        localStorage.setItem('portfolio_visitor_id', visitorId);
+        
+        // Check if this visitor has already been recorded
+        const visitorRef = ref(database, `visitors/${visitorId}`);
+        const snapshot = await get(visitorRef);
+        
+        if (!snapshot.exists()) {
+          // Record the new visitor
+          await set(visitorRef, {
+            firstVisit: new Date().toISOString(),
+            lastVisit: new Date().toISOString(),
+            visitCount: 1
+          });
+          
+          // Update total visitor count
+          const countRef = ref(database, 'analytics/totalUniqueVisitors');
+          const countSnapshot = await get(countRef);
+          const currentCount = countSnapshot.exists() ? countSnapshot.val() : 0;
+          await set(countRef, currentCount + 1);
+        } else {
+          // Update existing visitor's last visit
+          const visitorData = snapshot.val();
+          await update(visitorRef, {
+            lastVisit: new Date().toISOString(),
+            visitCount: (visitorData.visitCount || 1) + 1
+          });
+        }
+      } else {
+        // Update existing visitor
+        const visitorRef = ref(database, `visitors/${visitorId}`);
+        const snapshot = await get(visitorRef);
+        
+        if (snapshot.exists()) {
+          const visitorData = snapshot.val();
+          await update(visitorRef, {
+            lastVisit: new Date().toISOString(),
+            visitCount: (visitorData.visitCount || 1) + 1
+          });
+        }
+      }
+    } catch (error) {
+      console.error('Error recording visit:', error);
+    }
+  },
+
+  // Get visitor analytics
+  async getAnalytics() {
+    try {
+      const analyticsRef = ref(database, 'analytics');
+      const snapshot = await get(analyticsRef);
+      
+      if (snapshot.exists()) {
+        return snapshot.val();
+      }
+      
+      return {
+        totalUniqueVisitors: 0
+      };
+    } catch (error) {
+      console.error('Error fetching analytics:', error);
+      return {
+        totalUniqueVisitors: 0
+      };
+    }
+  },
+
+  // Get all visitors data (for admin)
+  async getAllVisitors() {
+    try {
+      const visitorsRef = ref(database, 'visitors');
+      const snapshot = await get(visitorsRef);
+      
+      if (snapshot.exists()) {
+        return snapshot.val();
+      }
+      
+      return {};
+    } catch (error) {
+      console.error('Error fetching visitors data:', error);
+      return {};
+    }
+  }
+};
+
 // Portfolio data services
 export const portfolioService = {
   // Get all portfolio data
