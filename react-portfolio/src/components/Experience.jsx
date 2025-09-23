@@ -23,9 +23,10 @@ const Experience = () => {
         {experience.map((job, index) => (
           <div key={index} className="experience-item">
             <h3>{job.title}</h3>
-            <p className="company">
-              <img id="logo" src={job.companyLogo} alt={`${job.company} Logo`} /> {job.company}
-            </p>
+            <div className="company">
+              <img id="logo" src={job.companyLogo} alt={`${job.company} Logo`} />
+              <span className="company-name">{job.company}</span>
+            </div>
             <p>{job.period}</p>
             <ul>
               {Array.isArray(job.description) 

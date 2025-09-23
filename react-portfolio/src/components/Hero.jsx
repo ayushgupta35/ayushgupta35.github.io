@@ -71,8 +71,10 @@ const Hero = () => {
             lineHeight: '1.6', 
             color: '#555',
             maxWidth: '700px',
+            marginLeft: 'auto',
+            marginRight: 'auto',
             marginBottom: '1.5rem',
-            textAlign: 'left'
+            textAlign: 'center'
           }}>
             {introParagraph}
           </p>
