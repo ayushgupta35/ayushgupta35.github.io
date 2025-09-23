@@ -37,20 +37,25 @@ const Certifications = () => {
         {certificationsArray.map((certificationCategory, index) => (
           <div key={certificationCategory.category} className="certification-item">
             <h3>{certificationCategory.category}</h3>
-            <ul>
+            <div className="certification-content">
               {Array.isArray(certificationCategory.items) && certificationCategory.items.map((item, itemIndex) => {
                 if (item.includes(' - ')) {
-                  const [bold, rest] = item.split(' - ');
+                  const [title, description] = item.split(' - ');
                   return (
-                    <li key={itemIndex}>
-                      <b>{bold}</b> - {rest}
-                    </li>
+                    <div key={itemIndex} className="certification-entry">
+                      <h4 className="certification-title">{title}</h4>
+                      <p className="certification-description">{description}</p>
+                    </div>
                   );
                 } else {
-                  return <li key={itemIndex}>{item}</li>;
+                  return (
+                    <div key={itemIndex} className="certification-entry">
+                      <h4 className="certification-title">{item}</h4>
+                    </div>
+                  );
                 }
               })}
-            </ul>
+            </div>
           </div>
         ))}
       </div>

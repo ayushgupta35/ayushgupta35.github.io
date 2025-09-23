@@ -119,30 +119,73 @@ const ProjectDetail = () => {
   }
 
   return (
-    <div>
+    <div className="project-detail-container project-detail-page">
       <a href="#" onClick={(e) => { e.preventDefault(); handleBackClick(); }} className="back-link">← Back</a>
-      <div id="project-content">
-        <h1 id="project-title">{project.title}</h1>
-        <p id="project-technologies">{project.technologies}</p>
-        <img id="project-image" src={project.image} alt={project.title} />
-        <p id="project-description">{project.description}</p>
-        <div id="project-links">
-          {project.resourcesLink && renderLinkButton(
-            project.resourcesLink, 
-            isGitHubLink(project.resourcesLink) ? 'View on GitHub' : 
-            isFigmaLink(project.resourcesLink) ? 'View on Figma' : 
-            isChromeStoreLink(project.resourcesLink) ? 'View in Chrome Store' :
-            'Project Resources'
-          )}
-          {project.presentationLink && renderLinkButton(
-            project.presentationLink,
-            isGitHubLink(project.presentationLink) ? 'View on GitHub' :
-            isFigmaLink(project.presentationLink) ? 'View on Figma' :
-            isChromeStoreLink(project.presentationLink) ? 'View in Chrome Store' :
-            'View Project'
-          )}
+      
+      {/* Hero Section */}
+      <div className="project-hero">
+        <div className="project-hero-content">
+          <h1 className="project-title-large">{project.title}</h1>
+          <div className="project-tech-badges">
+            {project.technologies && project.technologies.split(',').map((tech, index) => (
+              <span key={index} className="tech-badge">
+                {tech.trim()}
+              </span>
+            ))}
+          </div>
+        </div>
+        <div className="project-hero-image">
+          <img src={project.image} alt={project.title} />
         </div>
       </div>
+
+      {/* Main Content Grid */}
+      <div className="project-content-grid">
+        {/* Description Card */}
+        <div className="project-card project-description-card">
+          <h2 className="project-card-title">About This Project</h2>
+          <p className="project-description-text">{project.description}</p>
+        </div>
+
+        {/* Links Card - Only show if there are links */}
+        {(project.resourcesLink || project.presentationLink) && (
+          <div className="project-card project-links-card">
+            <h2 className="project-card-title">View Project</h2>
+            <div className="project-links-grid">
+              {project.resourcesLink && renderLinkButton(
+                project.resourcesLink, 
+                isGitHubLink(project.resourcesLink) ? 'View on GitHub' : 
+                isFigmaLink(project.resourcesLink) ? 'View on Figma' : 
+                isChromeStoreLink(project.resourcesLink) ? 'View in Chrome Store' :
+                'Project Resources'
+              )}
+              {project.presentationLink && renderLinkButton(
+                project.presentationLink,
+                isGitHubLink(project.presentationLink) ? 'View on GitHub' :
+                isFigmaLink(project.presentationLink) ? 'View on Figma' :
+                isChromeStoreLink(project.presentationLink) ? 'View in Chrome Store' :
+                'View Project'
+              )}
+            </div>
+          </div>
+        )}
+
+        {/* Tech Stack Card */}
+        <div className="project-card project-tech-card">
+          <h2 className="project-card-title">Technologies Used</h2>
+          <div className="tech-stack-list">
+            {project.technologies && project.technologies.split(',').map((tech, index) => (
+              <div key={index} className="tech-item">
+                <span className="tech-name">{tech.trim()}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <p>&copy; Ayush Gupta 2025</p>
+      </footer>
     </div>
   );
 };

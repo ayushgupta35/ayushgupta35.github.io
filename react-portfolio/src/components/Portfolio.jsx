@@ -30,10 +30,9 @@ const Portfolio = () => {
     <section className="portfolio" id="portfolio">
       {projects.map((project) => (
         <div key={project.id} className="wrapper project-wrapper" data-project-id={project.id}>
+          <h3>{project.title}</h3>
           <img src={project.image} alt={project.id} />
-          <h3>
-            {project.title}
-            <br />
+          <div className="project-content">
             {/* Technology bubbles */}
             {project.technologies && (
               <div className="project-technologies">
@@ -51,7 +50,7 @@ const Portfolio = () => {
               <Eye size={18} />
               View Project
             </button>
-          </h3>
+          </div>
         </div>
       ))}
     </section>
