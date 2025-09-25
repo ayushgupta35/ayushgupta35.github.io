@@ -37,10 +37,82 @@ const ProjectsManager = () => {
 
   const [formData, setFormData] = useState(initialProjectState);
   const [imagePath, setImagePath] = useState(''); // Track Firebase Storage path for deletion
+  const [copied, setCopied] = useState(false);
 
   const handleImageChange = (url, path) => {
     setFormData(prev => ({ ...prev, image: url }));
     setImagePath(path);
+  };
+
+  const exportAllProjects = async () => {
+    try {
+      let text = `PORTFOLIO PROJECTS EXPORT\n`;
+      text += `Generated on: ${new Date().toLocaleDateString()} at ${new Date().toLocaleTimeString()}\n`;
+      text += `Total Projects: ${projects.length}\n`;
+      text += `${'='.repeat(80)}\n\n`;
+
+      projects.forEach((project, index) => {
+        text += `PROJECT ${index + 1}: ${project.title || 'Untitled'}\n`;
+        text += `${'-'.repeat(50)}\n`;
+        
+        if (project.category) {
+          text += `Category: ${project.category}\n`;
+        }
+        
+        if (project.featured) {
+          text += `Status: Featured Project\n`;
+        }
+        
+        text += `\nDescription:\n${project.description || 'No description available'}\n\n`;
+        
+        if (project.longDescription) {
+          text += `Detailed Description:\n${project.longDescription}\n\n`;
+        }
+        
+        if (project.technologies) {
+          if (Array.isArray(project.technologies) && project.technologies.length > 0) {
+            text += `Technologies: ${project.technologies.join(', ')}\n`;
+          } else if (typeof project.technologies === 'string' && project.technologies.trim()) {
+            text += `Technologies: ${project.technologies}\n`;
+          }
+        }
+        
+        if (project.challenges) {
+          text += `\nChallenges:\n${project.challenges}\n`;
+        }
+        
+        if (project.learnings) {
+          text += `\nLearnings:\n${project.learnings}\n`;
+        }
+        
+        text += '\nLinks:\n';
+        if (project.projectUrl || project.presentationLink) {
+          text += `- Project URL: ${project.projectUrl || project.presentationLink || 'N/A'}\n`;
+        }
+        if (project.resourcesUrl || project.resourcesLink) {
+          text += `- Resources/Code: ${project.resourcesUrl || project.resourcesLink || 'N/A'}\n`;
+        }
+        if (project.image) {
+          text += `- Image: ${project.image}\n`;
+        }
+        
+        text += `\n${'='.repeat(80)}\n\n`;
+      });
+
+      text += `END OF EXPORT\nTotal Projects Exported: ${projects.length}\n`;
+      
+      await navigator.clipboard.writeText(text);
+      setCopied(true);
+      setMessage('📋 All projects copied to clipboard successfully!');
+      
+      // Reset copied state after 3 seconds
+      setTimeout(() => {
+        setCopied(false);
+      }, 3000);
+    } catch (error) {
+      console.error('Error copying to clipboard:', error);
+      setMessage('❌ Failed to copy to clipboard. Please try again.');
+    }
   };
 
   useEffect(() => {
@@ -210,19 +282,37 @@ const ProjectsManager = () => {
     <div>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
         <h2>Manage Projects</h2>
-        <button
-          onClick={() => setShowForm(true)}
-          style={{
-            padding: '0.5rem 1rem',
-            backgroundColor: '#4B2E83',
-            color: 'white',
-            border: 'none',
-            borderRadius: '4px',
-            cursor: 'pointer'
-          }}
-        >
-          Add New Project
-        </button>
+        <div style={{ display: 'flex', gap: '1rem' }}>
+          <button
+            onClick={exportAllProjects}
+            style={{
+              padding: '0.5rem 1rem',
+              backgroundColor: copied ? '#28a745' : '#6c757d',
+              color: 'white',
+              border: 'none',
+              borderRadius: '4px',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5rem'
+            }}
+          >
+            {copied ? '✅' : '📋'} {copied ? 'Copied!' : 'Export All'}
+          </button>
+          <button
+            onClick={() => setShowForm(true)}
+            style={{
+              padding: '0.5rem 1rem',
+              backgroundColor: '#4B2E83',
+              color: 'white',
+              border: 'none',
+              borderRadius: '4px',
+              cursor: 'pointer'
+            }}
+          >
+            Add New Project
+          </button>
+        </div>
       </div>
 
       {message && (

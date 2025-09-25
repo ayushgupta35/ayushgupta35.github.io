@@ -7,6 +7,7 @@ import ExperienceManager from '../components/admin/ExperienceManager';
 import CertificationsManager from '../components/admin/CertificationsManager';
 import HeroManager from '../components/admin/HeroManager';
 import VisitorAnalytics from '../components/admin/VisitorAnalytics';
+import DatabaseEditor from '../components/admin/DatabaseEditor';
 
 const AdminDashboard = () => {
   const [activeTab, setActiveTab] = useState('hero');
@@ -26,7 +27,8 @@ const AdminDashboard = () => {
     { id: 'skills', label: 'Skills', icon: '💡' },
     { id: 'experience', label: 'Experience', icon: '💼' },
     { id: 'certifications', label: 'Certifications', icon: '🎓' },
-    { id: 'analytics', label: 'Analytics', icon: '📊' }
+    { id: 'analytics', label: 'Analytics', icon: '📊' },
+    { id: 'database', label: 'Database Editor', icon: '🗄️' }
   ];
 
   const renderTabContent = () => {
@@ -65,6 +67,12 @@ const AdminDashboard = () => {
         return (
           <ErrorBoundary>
             <VisitorAnalytics />
+          </ErrorBoundary>
+        );
+      case 'database':
+        return (
+          <ErrorBoundary>
+            <DatabaseEditor />
           </ErrorBoundary>
         );
       default:
