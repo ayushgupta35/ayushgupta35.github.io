@@ -40,6 +40,25 @@ const Experience = () => {
                 : <li>No description available</li>
               }
             </ul>
+            {/* Technical Skills bubbles */}
+            {job.technicalSkills && (
+              <div className="experience-skills">
+                {Array.isArray(job.technicalSkills) 
+                  ? job.technicalSkills.map((skill, skillIndex) => (
+                      <span key={skillIndex} className="experience-skill-bubble">
+                        {skill}
+                      </span>
+                    ))
+                  : typeof job.technicalSkills === 'string'
+                  ? job.technicalSkills.split(',').map((skill, skillIndex) => (
+                      <span key={skillIndex} className="experience-skill-bubble">
+                        {skill.trim()}
+                      </span>
+                    ))
+                  : null
+                }
+              </div>
+            )}
           </div>
         ))}
       </div>

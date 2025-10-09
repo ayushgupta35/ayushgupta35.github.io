@@ -813,6 +813,19 @@ footer {
     padding-left: 1rem !important;
   }
   
+  /* Experience skills mobile adjustments */
+  .experience-skills {
+    margin: 0.8rem 0 0.3rem 0 !important;
+    gap: 0.3rem !important;
+  }
+  
+  .experience-skill-bubble {
+    padding: 0.4rem 0.6rem !important;
+    margin: 0.1rem 0.1rem 0.2rem 0 !important;
+    border-radius: 10px !important;
+    font-size: 0.75rem !important;
+  }
+  
   /* Certifications mobile adjustments */
   .certifications {
     margin: 1rem auto !important;
@@ -1065,6 +1078,32 @@ footer {
   flex-grow: 20;
   padding: 1rem;
   font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  background-color: var(--btn-bg-light);
+  color: var(--primary-text-color);
+}
+
+/* ——— Experience Skills Bubbles ——— */
+.experience-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0 0.5rem 0;
+  justify-content: flex-start;
+}
+
+.experience-skill-bubble {
+  text-align: center;
+  max-width: fit-content;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: inline-block;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  box-shadow: 0 0 0.3rem rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 0.5rem 0.8rem;
+  font-size: 0.8rem;
   letter-spacing: 0.5px;
   background-color: var(--btn-bg-light);
   color: var(--primary-text-color);
