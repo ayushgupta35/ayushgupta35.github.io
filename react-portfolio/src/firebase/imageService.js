@@ -49,6 +49,32 @@ export const imageService = {
     return this.uploadImage(file, 'assets');
   },
 
+  // Upload HTML file for R Markdown projects
+  async uploadHtmlFile(file) {
+    try {
+      // Create a unique filename
+      const timestamp = Date.now();
+      const filename = `r-project-${timestamp}.html`;
+      
+      // Create storage reference - use 'assets' folder which should have permissions
+      const storageRef = ref(storage, `assets/${filename}`);
+      
+      // Upload file
+      const snapshot = await uploadBytes(storageRef, file);
+      
+      // Get download URL
+      const downloadURL = await getDownloadURL(snapshot.ref);
+      
+      return {
+        url: downloadURL,
+        path: snapshot.ref.fullPath
+      };
+    } catch (error) {
+      console.error('Error uploading HTML file:', error);
+      throw error;
+    }
+  },
+
   // Delete image from storage
   async deleteImage(imagePath) {
     try {

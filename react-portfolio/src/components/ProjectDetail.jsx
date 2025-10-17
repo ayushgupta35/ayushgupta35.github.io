@@ -73,7 +73,36 @@ const ProjectDetail = () => {
                    url.toLowerCase().includes('chromewebstore.google.com'));
   };
 
-  const renderLinkButton = (url, label) => {
+  const isRMarkdownProject = (project) => {
+    // Check if project is marked as R Markdown or has the old indicators for backward compatibility
+    return project && (
+      project.isRMarkdown ||
+      (project.technologies && project.technologies.toLowerCase().includes('r')) ||
+      (project.description && project.description.toLowerCase().includes('r markdown')) ||
+      (project.resourcesLink && project.resourcesLink.startsWith('r-project:'))
+    );
+  };
+
+  const getRMarkdownPath = (project) => {
+    // Use new isRMarkdown field and direct link to htmlFile if available
+    if (project.isRMarkdown && project.htmlFile) {
+      return project.htmlFile;
+    }
+    
+    // Fallback to old r-project: format for backward compatibility
+    if (project.resourcesLink && project.resourcesLink.startsWith('r-project:')) {
+      // Format: r-project:projectId/filename or r-project:projectId
+      const parts = project.resourcesLink.replace('r-project:', '').split('/');
+      const projectId = parts[0];
+      const fileName = parts[1] || null;
+      return fileName ? `/r-project/${projectId}/${fileName}` : `/r-project/${projectId}`;
+    }
+    
+    // Default to using the project's own ID
+    return `/r-project/${project.id}`;
+  };
+
+  const renderLinkButton = (url, label, isInternal = false) => {
     const isGitHub = isGitHubLink(url);
     const isFigma = isFigmaLink(url);
     const isChromeStore = isChromeStoreLink(url);
@@ -92,6 +121,19 @@ const ProjectDetail = () => {
       icon = <Chrome size={18} />;
     } else {
       linkClass += ' external-link';
+    }
+
+    // Handle internal R markdown links
+    if (isInternal) {
+      return (
+        <button
+          onClick={() => navigate(url)}
+          className={linkClass}
+        >
+          {icon}
+          {label}
+        </button>
+      );
     }
     
     return (
@@ -148,17 +190,34 @@ const ProjectDetail = () => {
         </div>
 
         {/* Links Card - Only show if there are links */}
-        {(project.resourcesLink || project.presentationLink) && (
+        {(project.resourcesLink || project.presentationLink || (project.isRMarkdown && project.htmlFile)) && (
           <div className="project-card project-links-card">
             <h2 className="project-card-title">View Project</h2>
             <div className="project-links-grid">
-              {project.resourcesLink && renderLinkButton(
+              {/* R Markdown HTML File Link */}
+              {project.isRMarkdown && project.htmlFile && renderLinkButton(
+                project.htmlFile,
+                'View R Analysis',
+                false // External link to Firebase Storage
+              )}
+              
+              {/* Regular Resource Link */}
+              {project.resourcesLink && !project.resourcesLink.startsWith('r-project:') && renderLinkButton(
                 project.resourcesLink, 
                 isGitHubLink(project.resourcesLink) ? 'View on GitHub' : 
                 isFigmaLink(project.resourcesLink) ? 'View on Figma' : 
                 isChromeStoreLink(project.resourcesLink) ? 'View in Chrome Store' :
                 'Project Resources'
               )}
+              
+              {/* Legacy R Project Link (for backward compatibility) */}
+              {project.resourcesLink && project.resourcesLink.startsWith('r-project:') && renderLinkButton(
+                getRMarkdownPath(project),
+                'View R Analysis',
+                true
+              )}
+              
+              {/* Presentation/Project Link */}
               {project.presentationLink && renderLinkButton(
                 project.presentationLink,
                 isGitHubLink(project.presentationLink) ? 'View on GitHub' :

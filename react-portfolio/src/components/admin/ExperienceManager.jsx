@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { experienceService } from '../../firebase/services';
 import ImageUpload from './ImageUpload';
 import ReorderButtons from './ReorderButtons';
+import TechnicalSkillsEditor from './TechnicalSkillsEditor';
 
 const ExperienceManager = () => {
   const [experiences, setExperiences] = useState([]);
@@ -25,7 +26,8 @@ const ExperienceManager = () => {
     company: '',
     companyLogo: '',
     period: '',
-    description: ''
+    description: '',
+    technicalSkills: []
   };
 
   const [formData, setFormData] = useState(initialFormState);
@@ -94,7 +96,8 @@ const ExperienceManager = () => {
       company: experience.company || '',
       companyLogo: experience.companyLogo || '',
       period: experience.period || experience.duration || '',
-      description: experience.description && typeof experience.description === 'string' ? experience.description : ''
+      description: experience.description && typeof experience.description === 'string' ? experience.description : '',
+      technicalSkills: Array.isArray(experience.technicalSkills) ? experience.technicalSkills : []
     };
     setFormData(editData);
     setEditingIndex(index);
@@ -218,6 +221,12 @@ const ExperienceManager = () => {
           </div>
         </div>
 
+        <TechnicalSkillsEditor
+          skills={formData.technicalSkills}
+          onChange={(skills) => setFormData(prev => ({ ...prev, technicalSkills: skills }))}
+          label="Technical Skills"
+        />
+
         <div style={{ display: 'flex', gap: '1rem' }}>
           <button
             type="submit"
@@ -331,6 +340,25 @@ const ExperienceManager = () => {
                         <p style={{ margin: '0 0 0.75rem 0', fontSize: '0.9rem', color: '#555', fontStyle: 'italic' }}>
                           {experience.description}
                         </p>
+                      )}
+                      {Array.isArray(experience.technicalSkills) && experience.technicalSkills.length > 0 && (
+                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginTop: '0.5rem' }}>
+                          {experience.technicalSkills.map((skill, skillIndex) => (
+                            <span
+                              key={skillIndex}
+                              style={{
+                                padding: '0.25rem 0.5rem',
+                                backgroundColor: '#4B2E83',
+                                color: 'white',
+                                borderRadius: '12px',
+                                fontSize: '0.75rem',
+                                fontWeight: '500'
+                              }}
+                            >
+                              {skill}
+                            </span>
+                          ))}
+                        </div>
                       )}
                     </div>
                   </div>

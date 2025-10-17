@@ -5,12 +5,14 @@ import ImageUpload from './ImageUpload';
 const HeroManager = () => {
   const [heroData, setHeroData] = useState({
     profilePicture: '',
+    favicon: '',
     subHeader: '',
     introParagraph: '',
     bulletPoints: ['', '', '', '', '']
   });
   const [personalInfo, setPersonalInfo] = useState(null);
   const [imagePath, setImagePath] = useState(''); // Track Firebase Storage path for deletion
+  const [faviconPath, setFaviconPath] = useState(''); // Track favicon Storage path
   const [message, setMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
@@ -45,6 +47,7 @@ const HeroManager = () => {
       if (data) {
         setHeroData({
           profilePicture: data.profilePicture || '',
+          favicon: data.favicon || '',
           subHeader: data.subHeader || '',
           introParagraph: data.introParagraph || '',
           bulletPoints: data.bulletPoints || ['', '', '', '', '']
@@ -76,6 +79,11 @@ const HeroManager = () => {
     setImagePath(path);
   };
 
+  const handleFaviconChange = (url, path) => {
+    setHeroData(prev => ({ ...prev, favicon: url }));
+    setFaviconPath(path);
+  };
+
   const handleSave = async () => {
     setIsLoading(true);
     try {
@@ -92,30 +100,53 @@ const HeroManager = () => {
   };
 
   return (
-    <div className="hero-manager">
+    <div style={{ padding: '2rem' }}>
       <h2>Hero Section Management</h2>
       
       {message && (
-        <div className={`message ${message.includes('Error') ? 'error' : 'success'}`}>
+        <div style={{
+          padding: '1rem',
+          borderRadius: '4px',
+          marginBottom: '1rem',
+          backgroundColor: message.includes('Error') ? '#f8d7da' : '#d4edda',
+          color: message.includes('Error') ? '#721c24' : '#155724',
+          border: message.includes('Error') ? '1px solid #f5c6cb' : '1px solid #c3e6cb'
+        }}>
           {message}
         </div>
       )}
 
-      <div className="hero-form">
-        <div className="form-section">
-          <h3>Profile Picture</h3>
+      <div>
+        <div style={{ marginBottom: '2rem' }}>
+          <h3 style={{ marginBottom: '0.5rem', color: '#333' }}>Profile Picture</h3>
           {/* Show current profile picture */}
-          <div className="current-image-section">
-            <h4>Current Profile Picture:</h4>
-            <div className="current-image-display">
+          <div style={{ marginBottom: '1.5rem' }}>
+            <h4 style={{ marginBottom: '0.5rem', color: '#555', fontSize: '0.9rem' }}>Current Profile Picture:</h4>
+            <div style={{
+              border: '2px dashed #ddd',
+              borderRadius: '8px',
+              padding: '1rem',
+              textAlign: 'center',
+              background: '#f9f9f9'
+            }}>
               {(heroData.profilePicture || personalInfo?.image) ? (
                 <img 
                   src={heroData.profilePicture || personalInfo?.image} 
                   alt="Current profile" 
-                  className="current-profile-pic"
+                  style={{
+                    width: '120px',
+                    height: '120px',
+                    borderRadius: '50%',
+                    objectFit: 'cover',
+                    border: '3px solid #4B2E83'
+                  }}
                 />
               ) : (
-                <div className="no-image-placeholder">
+                <div style={{
+                  color: '#999',
+                  fontStyle: 'italic',
+                  padding: '2rem'
+                }}>
                   No profile picture set
                 </div>
               )}
@@ -130,6 +161,58 @@ const HeroManager = () => {
               onImageChange={handleImageChange}
               folder="projects"
               label="Profile Picture"
+            />
+          </div>
+        </div>
+
+        {/* Favicon Section */}
+        <div style={{ marginBottom: '2rem' }}>
+          <h3 style={{ marginBottom: '0.5rem', color: '#333' }}>Favicon</h3>
+          {/* Show current favicon */}
+          <div style={{ marginBottom: '1.5rem' }}>
+            <h4 style={{ marginBottom: '0.5rem', color: '#555', fontSize: '0.9rem' }}>Current Favicon:</h4>
+            <div style={{
+              border: '2px dashed #ddd',
+              borderRadius: '8px',
+              padding: '1rem',
+              textAlign: 'center',
+              background: '#f9f9f9'
+            }}>
+              {heroData.favicon ? (
+                <img 
+                  src={heroData.favicon} 
+                  alt="Current favicon" 
+                  style={{
+                    width: '64px',
+                    height: '64px',
+                    objectFit: 'contain',
+                    border: '1px solid #ddd',
+                    borderRadius: '4px'
+                  }}
+                />
+              ) : (
+                <div style={{
+                  color: '#999',
+                  fontStyle: 'italic',
+                  padding: '2rem'
+                }}>
+                  No favicon set
+                </div>
+              )}
+            </div>
+          </div>
+          
+          {/* Image upload for favicon */}
+          <div className="image-upload-section">
+            <h4>Upload New Favicon:</h4>
+            <p style={{ fontSize: '0.9rem', color: '#666', marginBottom: '0.5rem' }}>
+              Recommended: 32x32 or 64x64 PNG/ICO file
+            </p>
+            <ImageUpload
+              currentImage={heroData.favicon}
+              onImageChange={handleFaviconChange}
+              folder="projects"
+              label="Favicon"
             />
           </div>
         </div>

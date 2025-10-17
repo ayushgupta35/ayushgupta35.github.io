@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { projectsService } from '../../firebase/services';
 import ImageUpload from './ImageUpload';
 import ReorderButtons from './ReorderButtons';
+import HtmlFileUpload from './HtmlFileUpload';
 
 const ProjectsManager = () => {
   const [projects, setProjects] = useState([]);
@@ -32,16 +33,24 @@ const ProjectsManager = () => {
     category: '',
     longDescription: '',
     challenges: '',
-    learnings: ''
+    learnings: '',
+    isRMarkdown: false,
+    htmlFile: ''
   };
 
   const [formData, setFormData] = useState(initialProjectState);
   const [imagePath, setImagePath] = useState(''); // Track Firebase Storage path for deletion
+  const [htmlFilePath, setHtmlFilePath] = useState(''); // Track HTML file path for deletion
   const [copied, setCopied] = useState(false);
 
   const handleImageChange = (url, path) => {
     setFormData(prev => ({ ...prev, image: url }));
     setImagePath(path);
+  };
+
+  const handleHtmlFileChange = (url, path) => {
+    setFormData(prev => ({ ...prev, htmlFile: url }));
+    setHtmlFilePath(path);
   };
 
   const exportAllProjects = async () => {
@@ -187,6 +196,7 @@ const ProjectsManager = () => {
       setTimeout(() => {
         setFormData(initialProjectState);
         setImagePath('');
+        setHtmlFilePath('');
         setEditingProject(null);
         setShowForm(false);
         fetchProjects();
@@ -214,7 +224,9 @@ const ProjectsManager = () => {
       category: project.category || '',
       longDescription: project.longDescription || '',
       challenges: project.challenges || '',
-      learnings: project.learnings || ''
+      learnings: project.learnings || '',
+      isRMarkdown: project.isRMarkdown || false,
+      htmlFile: project.htmlFile || ''
     };
     setFormData(editData);
     setEditingProject(project);
@@ -236,6 +248,8 @@ const ProjectsManager = () => {
 
   const handleCancel = () => {
     setFormData(initialProjectState);
+    setImagePath('');
+    setHtmlFilePath('');
     setEditingProject(null);
     setShowForm(false);
   };
@@ -454,6 +468,27 @@ const ProjectsManager = () => {
               </label>
             </div>
 
+            <div style={{ marginBottom: '1rem' }}>
+              <label style={{ display: 'flex', alignItems: 'center' }}>
+                <input
+                  type="checkbox"
+                  name="isRMarkdown"
+                  checked={formData.isRMarkdown}
+                  onChange={handleInputChange}
+                  style={{ marginRight: '0.5rem' }}
+                />
+                R Markdown Project
+              </label>
+            </div>
+
+            {formData.isRMarkdown && (
+              <HtmlFileUpload
+                currentFile={formData.htmlFile}
+                onFileChange={handleHtmlFileChange}
+                label="R Markdown HTML File"
+              />
+            )}
+
             <div style={{ display: 'flex', gap: '1rem' }}>
               <button
                 type="submit"
@@ -510,17 +545,48 @@ const ProjectsManager = () => {
                     <div style={{ marginBottom: '0.5rem' }}>
                       <strong>Technologies:</strong> {Array.isArray(project.technologies) ? project.technologies.join(', ') : (project.technologies || 'N/A')}
                     </div>
-                    {project.featured && (
-                      <span style={{
-                        backgroundColor: '#4B2E83',
-                        color: 'white',
-                        padding: '0.25rem 0.5rem',
-                        borderRadius: '4px',
-                        fontSize: '0.8rem'
-                      }}>
-                        Featured
-                      </span>
-                    )}
+                    <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+                      {project.featured && (
+                        <span style={{
+                          backgroundColor: '#4B2E83',
+                          color: 'white',
+                          padding: '0.25rem 0.5rem',
+                          borderRadius: '4px',
+                          fontSize: '0.8rem'
+                        }}>
+                          Featured
+                        </span>
+                      )}
+                      {project.isRMarkdown && (
+                        <span style={{
+                          backgroundColor: 'white',
+                          color: '#4B2E83',
+                          border: '1px solid #4B2E83',
+                          padding: '0.25rem 0.5rem',
+                          borderRadius: '4px',
+                          fontSize: '0.8rem'
+                        }}>
+                          R Markdown
+                        </span>
+                      )}
+                      {project.isRMarkdown && project.htmlFile && (
+                        <a 
+                          href={project.htmlFile} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          style={{
+                            backgroundColor: '#4B2E83',
+                            color: 'white',
+                            padding: '0.25rem 0.5rem',
+                            borderRadius: '4px',
+                            fontSize: '0.8rem',
+                            textDecoration: 'none'
+                          }}
+                        >
+                          View HTML
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </div>
                 <div style={{ display: 'flex', gap: '0.5rem', marginLeft: '1rem' }}>
@@ -630,6 +696,51 @@ const ProjectsManager = () => {
                       />
                     </div>
                   </div>
+
+                  <div style={{ marginBottom: '1rem' }}>
+                    <label style={{ display: 'block', marginBottom: '0.5rem' }}>Long Description</label>
+                    <textarea
+                      name="longDescription"
+                      value={formData.longDescription}
+                      onChange={handleInputChange}
+                      rows="4"
+                      style={{ width: '100%', padding: '0.5rem', borderRadius: '4px', border: '1px solid #ddd' }}
+                    />
+                  </div>
+
+                  <div style={{ marginBottom: '1rem' }}>
+                    <label style={{ display: 'flex', alignItems: 'center' }}>
+                      <input
+                        type="checkbox"
+                        name="featured"
+                        checked={formData.featured}
+                        onChange={handleInputChange}
+                        style={{ marginRight: '0.5rem' }}
+                      />
+                      Featured Project
+                    </label>
+                  </div>
+
+                  <div style={{ marginBottom: '1rem' }}>
+                    <label style={{ display: 'flex', alignItems: 'center' }}>
+                      <input
+                        type="checkbox"
+                        name="isRMarkdown"
+                        checked={formData.isRMarkdown}
+                        onChange={handleInputChange}
+                        style={{ marginRight: '0.5rem' }}
+                      />
+                      R Markdown Project
+                    </label>
+                  </div>
+
+                  {formData.isRMarkdown && (
+                    <HtmlFileUpload
+                      currentFile={formData.htmlFile}
+                      onFileChange={handleHtmlFileChange}
+                      label="R Markdown HTML File"
+                    />
+                  )}
 
                   <div style={{ display: 'flex', gap: '1rem' }}>
                     <button

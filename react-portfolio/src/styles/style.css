@@ -1613,8 +1613,8 @@ section.experience .experience-item:hover .company img#logo {
   grid-template-columns: 1fr auto;
   gap: 3rem;
   max-width: 90rem;
-  margin: 0 auto 3rem auto;
-  padding: 2rem 4rem;
+  margin: 0 auto;
+  padding: 0rem 4rem;
   align-items: center;
   min-height: 60vh;
 }
@@ -2535,6 +2535,185 @@ footer {
 
   .project-link.external-link:hover {
     box-shadow: 0 4px 8px rgba(74, 46, 131, 0.3) !important;
+  }
+}
+
+/* R Markdown Viewer Styles */
+.r-markdown-container {
+  min-height: 100vh;
+  background: var(--bg-color);
+  display: flex;
+  flex-direction: column;
+}
+
+.r-markdown-header {
+  background: #fff;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.r-markdown-header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.r-markdown-header-right {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  color: var(--btn-bg-color);
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+}
+
+.back-button:hover {
+  background-color: var(--btn-bg-color-light);
+}
+
+.project-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-width: 0;
+}
+
+.r-project-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary-text-color);
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.file-type-badge {
+  background: var(--btn-bg-color);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.action-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--btn-bg-color);
+  color: white;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.action-button:hover {
+  background: var(--cta-hover-color);
+  transform: translateY(-1px);
+}
+
+.r-markdown-content {
+  flex: 1;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.r-markdown-iframe {
+  width: 100%;
+  flex: 1;
+  border: none;
+  background: white;
+  min-height: calc(100vh - 80px);
+}
+
+.error-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--secondary-text-color);
+}
+
+.error-message svg {
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.error-message h2 {
+  color: var(--primary-text-color);
+  margin-bottom: 0.5rem;
+}
+
+/* Mobile styles for R Markdown Viewer */
+@media (max-width: 768px) {
+  .r-markdown-header {
+    padding: 1rem;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .r-markdown-header-left {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+
+  .project-info {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+
+  .r-project-title {
+    font-size: 1.25rem;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .file-type-badge {
+    align-self: center;
+  }
+
+  .r-markdown-header-right {
+    justify-content: center;
+  }
+
+  .action-button {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .r-markdown-iframe {
+    min-height: calc(100vh - 140px);
   }
 }
 
